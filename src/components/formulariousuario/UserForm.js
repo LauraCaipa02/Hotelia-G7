@@ -9,32 +9,20 @@ import Swal from "sweetalert2";
 
 function UserForm() {
 	const navigate=useNavigate();
-    const [data, setData] = useState({ id: '', tipodoc:'', nombre: '', apellido:'', fnacimiento:'', genero:'', email:'', telefono:'', paisorigen:'', password:'', tipouser:'', img:''})
     
-    const handleChange=({target})=> {
-        setData({
-            ...data,
-            [target.name]
-            :target.value
-        })
-    }
-    const url = "https://hoteliakuepag7.herokuapp.com/users";
 
     const handleSubmit= async (e)=> {
         e.preventDefault();
-        const response= await axios.post(url,data)
-        if (response.status === 201){
+        const response= await axios.post("https://hoteliakuepag7.herokuapp.com/users")
+        if (response.status === 200){
             Swal.fire(
                 'Guardado',
-                `El usuario <strong>${response.data.nombre}</strong> ha sido creado`,
+                `El usuario ha sido creado`,
                 'success')
                 navigate("/");
         }
         else {
-			Swal.fire(
-                'Error',
-                `El usuario <strong>${response.data.nombre}</strong> no fue creado`,
-                'error')
+			console.log("error");
         }
     }
 	const validateForm = values => {
@@ -91,9 +79,8 @@ function UserForm() {
 				<Form className="user-formgroup">
 					<div className="form-group">
 						<div>
-					<label htmlFor="framework" className="form-label">Tipo de documento</label>
-
-					<Field name="select" as="select" value={data.tipodoc} onChange={handleChange} multiple={false} className={(formik.touched.select && formik.errors.select) ? 'form-invalid' : 'form-select'} type="select">
+					<label htmlFor="tipodoc" className="form-label">Tipo de documento</label>
+					<Field id="tipodoc" name="tipodoc" as="select" multiple={false} className={(formik.touched.select && formik.errors.select) ? 'form-invalid' : 'form-select'} type="select">
 						<option value="0">Selecciona</option>
 						<option value="cc">Cedula de ciudadania</option>
 						<option value="ce">Cedula de extranjeria</option>
@@ -102,76 +89,71 @@ function UserForm() {
 							<div className="invalid-feedback">{formik.errors.select}</div>
 						) : null}
 					</Field></div><div>
-						<label htmlFor="idnumber" className='form-label'>Identificación</label>
-						<Field name="idnumber" value={data._id} onChange={handleChange} className={(formik.touched.idnumber && formik.errors.idnumber) ? 'form-invalid' : 'form-input'} type="number" />
+						<label htmlFor="id" className='form-label'>Identificación</label>
+						<Field id="id" name="id" className={(formik.touched.idnumber && formik.errors.idnumber) ? 'form-invalid' : 'form-input'} type="number" />
 						{formik.touched.idnumber && formik.errors.idnumber ? (
 							<div className="invalid-feedback">{formik.errors.idnumber}</div>
 						) : null}
 					</div></div>
 					<div className="form-group">
 						<div>
-					<label for="birthday" className='form-label'>Fecha de nacimiento</label>
+					<label for="fnacimiento" className='form-label'>Fecha de nacimiento</label>
 
-						<input className='form-input' type="date" name="birthday" placeholder="Selecciona fecha de nacimiento" value={data.fnacimiento} onChange={handleChange}></input>
+						<Field id="fnacimiento" className='form-input' type="date" name="fnacimiento" placeholder="Selecciona fecha de nacimiento"></Field>
 					
 					</div>
 					<div>
-					<label htmlFor="country" className="form-label">Selecciona el país de origen</label>
-					<Field name="country" as="select" multiple={false} value={data.paisorigen} onChange={handleChange} className={(formik.touched.select && formik.errors.select) ? 'form-invalid' : 'form-select'} type="select">
-						<option value="react">Nacionalidad</option>
-						<option value="ng">Pais</option>
-						<option value="vue">Region</option>
+					<label htmlFor="paisorigen" className="form-label">Selecciona el país de origen</label>
+					<Field id="paisorigen" name="paisorigen" as="select" multiple={false} className={(formik.touched.select && formik.errors.select) ? 'form-invalid' : 'form-select'} type="select">
+						<option value="1">Nacionalidad</option>
+						<option value="2">Pais</option>
+						<option value="3">Region</option>
 						{formik.touched.select && formik.errors.select ? (
-							<div className="invalid-feedback">{formik.errors.select}</div>
-						) : null}
-					</Field>
+							<div className="invalid-feedback">{formik.errors.select}</div>) : null}</Field>
 					</div>
 					</div>
 					<div className="form-group">
 						<div>
-						<label htmlFor="name" className="form-label">Nombre</label>
-						<Field name="name" value={data.nombre} onChange={handleChange} className={(formik.touched.name && formik.errors.name) ? 'form-invalid' : 'form-input'} type="text" />
+						<label htmlFor="nombre" className="form-label">Nombre</label>
+						<Field id="nombre" name="nombre" className={(formik.touched.name && formik.errors.name) ? 'form-invalid' : 'form-input'} type="text" />
 
 						{formik.touched.name && formik.errors.name ? (
-							<div className="invalid-feedback">{formik.errors.name}</div>
-						) : null}
+							<div className="invalid-feedback">{formik.errors.name}</div>) : null}
 					</div><div>
-						<label htmlFor="lastname" className='form-label'>Apellido</label>
-						<Field name="lastname" value={data.apellido} onChange={handleChange} className={(formik.touched.lastname && formik.errors.lastname) ? 'form-invalid' : 'form-input'} type="text" />
+						<label htmlFor="apellido" className='form-label'>Apellido</label>
+						<Field id="apellido" name="apellido" className={(formik.touched.lastname && formik.errors.lastname) ? 'form-invalid' : 'form-input'} type="text" />
 
 						{formik.touched.lastname && formik.errors.lastname ? (
-							<div className="invalid-feedback">{formik.errors.lastname}</div>
-						) : null}
+							<div className="invalid-feedback">{formik.errors.lastname}</div>) : null}
 					</div></div>
 					<div className="form-group">
 						
 					</div>
 					<div className="form-group">
 						<div>
-					<label className="form-label" htmlFor="customFile">Subir foto de perfil (opcional)</label>
-					<Field type="file" name="uploadedfile" value={data.img} onChange={handleChange} className="form" id="customFile" />
+					<label className="form-label" htmlFor="img">Subir foto de perfil (opcional)</label>
+					<Field id="img" type="file" name="img" className="form" />
 					</div><div>
-						<label className='form-label'>Genero</label>
+						<label className='form-label' htmlFor='genero'>Genero</label>
 
-							<Field className="form-check-input" value={data.genero} onChange={handleChange} type="radio" name="gridRadios" id="gridRadios1" value="male" />
+							<Field id="genero" className="form-check-input" type="radio" name="genero" value="hombre" />
 							<label className="form-" htmlFor="gridRadios1">Hombre</label>
 						
-							<Field className="form-check-input" value={data.genero} onChange={handleChange} type="radio" name="gridRadios" id="gridRadios2" value="female" />
+							<Field id="genero1" className="form-check-input" type="radio" name="genero" value="mujer" />
 							<label className="form-" htmlFor="gridRadios2">Mujer</label>
 						</div>
 					</div>
 					<div className="form-group">
 						<div>
-						<label htmlFor="telephone" className="form-label">Telefono</label>
-						<Field name="telephone" value={data.telefono} onChange={handleChange} className={(formik.touched.telephone && formik.errors.telephone) ? 'form-invalid' : 'form-input'} type="number" />
+						<label htmlFor="telefono" className="form-label">Telefono</label>
+						<Field id="telefono" name="telefono" className={(formik.touched.telephone && formik.errors.telephone) ? 'form-invalid' : 'form-input'} type="number" />
 
 						{formik.touched.telephone && formik.errors.telephone ? (
-							<div className="invalid-feedback">{formik.errors.telephone}</div>
-						) : null}
+							<div className="invalid-feedback">{formik.errors.telephone}</div>) : null}
 					</div>
 					<div>
 					<label htmlFor="email" className='form-label'>Correo electrónico</label>
-						<Field name="email" value={data.email} onChange={handleChange} className={(formik.touched.email && formik.errors.email) ? 'form-invalid' : 'form-input'} type="email" />
+						<Field id="email" name="email" className={(formik.touched.email && formik.errors.email) ? 'form-invalid' : 'form-input'} type="email" />
 
 						{formik.touched.email && formik.errors.email ? (
 							<div className="invalid-feedback">{formik.errors.email}</div>
@@ -181,18 +163,18 @@ function UserForm() {
 					<div class="form-group">
 						<div>
 						<label htmlFor="password" className="form-label">Contraseña</label>
-					<Field type="password" name="password" value={data.password} onChange={handleChange} className="form-input" placeholder="Contraseña"/>
+					<Field id="password" type="password" name="password" className="form-input" placeholder="Contraseña"/>
 					</div>
 					<div>
 					<label htmlFor="password2" className="form-label">Repetir contraseña</label>
 
-					<Field type="password2" name="password2" className="form-input" placeholder="Repita la contraseña"/>
+					<Field id="password2" type="password2" name="password2" className="form-input" placeholder="Repita la contraseña"/>
 					</div>
 					</div>
 					<div class="form-group">
-						<Field name="terms" className="form-check-input" type="checkbox" id="gridCheck" />
-					<label className="form-label" htmlFor="gridCheck">Acepto Terminos y Condiciones</label>
-					<Link to= '/tienda'>Consulta aquí los terminos y condiciones de Hotelia</Link>
+						<Field id="checkbox" name="checkbox" className="form-check-input" type="checkbox"/>
+					<label className="form-label" htmlFor="checkbox">Acepto Terminos y Condiciones</label>
+					<Link to= '/terminos'>Consulta aquí los terminos y condiciones de Hotelia</Link>
 
 					</div>
 					<div className="form-group">

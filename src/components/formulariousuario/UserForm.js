@@ -67,7 +67,9 @@ function UserForm() {
 		<Formik
 			initialValues={{ id: '', tipodoc:'', nombre: '', apellido:'', fnacimiento:'', genero:'', email:'', telefono:'', paisorigen:'', password:'', tipouser:'', img:'' }}
 			onSubmit={(values, { setSubmitting }) => {
+				
 				setTimeout(() => {
+					
 					alert(JSON.stringify(values, null, 2));
 					setSubmitting(false);
 				}, 1000);

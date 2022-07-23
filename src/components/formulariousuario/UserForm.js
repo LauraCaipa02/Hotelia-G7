@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { Formik, Field, Form } from 'formik';
+import { Formik } from 'formik';
 import './userform.css';
 import { Link } from 'react-router-dom';
 import axios from "axios";
@@ -8,54 +7,47 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 function UserForm() {
-	const navigate=useNavigate();
-    
+	const navigate = useNavigate();
 
-    const handleSubmit= async (e)=> {
-        e.preventDefault();
-        const response= await axios.post("https://hoteliakuepag7.herokuapp.com/users")
-        if (response.status === 200){
-            Swal.fire(
-                'Guardado',
-                `El usuario ha sido creado`,
-                'success')
-                navigate("/");
-        }
-        else {
-			console.log("error");
-        }
-    }
+
 	const validateForm = values => {
 		const errors = {};
-		if (!values.name) {
-			errors.name = 'Este campo es requerido';
-		} else if (values.name.length > 15 && values.name.length < 3) {
-			errors.name = 'Ingrese entre 3 a 15 caracteres';
+		if (!values.nombre) {
+			errors.nombre = 'Este campo es requerido';
+		} else if (values.nombre.length > 15 && values.nombre.length < 3) {
+			errors.nombre = 'Ingrese entre 3 a 15 caracteres';
 		}
-		if (!values.lastname) {
-			errors.lastname = 'Este campo es requerido';
-		} else if (values.lastname.length > 15 && values.lastname.length < 3) {
-			errors.lastname = 'Ingrese entre 3 a 15 caracteres';
+		if (!values.apellido) {
+			errors.apellido = 'Este campo es requerido';
+		} else if (values.apellido.length > 15 && values.apellido.length < 3) {
+			errors.apellido = 'Ingrese entre 3 a 15 caracteres';
 		}
 		if (!values.email) {
 			errors.email = 'Ingrese un correo electrónico';
 		} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
 			errors.email = 'Dirección de correo no válida';
 		}
-		if (!values.idnumber) {
-			errors.idnumber = 'Ingrese un número de identificación';
-		} else if (!/^[0-9]{8,15}$/i.test(values.idnumber)) {
-			errors.idnumber = '8 a 15 caracteres';
+		if (!values._id) {
+			errors._id = 'Ingrese un número de identificación';
+		} else if (!/^[0-9]{8,15}$/i.test(values._id)) {
+			errors._id = '8 a 15 caracteres';
 		}
-		if (!values.select == "0") {
-			errors.select = 'Selecciona un tipo de documento';
-		} 
-		if (!values.telephone) {
-			errors.telephone = 'Teléfono requerido';
-		}else if (!/^[0-9]{7,10}$/i.test(values.telephone)) {
-			errors.telephone = 'El número debe ser de 7 a 10 caracteres';
+		if (!values.tipodoc === "0") {
+			errors.tipodoc = 'Selecciona un tipo de documento';
 		}
-
+		if (!values.paisorigen === "0") {
+			errors.paisorigen = 'Selecciona un pais';
+		}
+		if (!values.telefono) {
+			errors.telefono = 'Teléfono requerido';
+		} else if (!/^[0-9]{7,10}$/i.test(values.telefono)) {
+			errors.telefono = 'El número debe ser de 7 a 10 caracteres';
+		}
+		if (!values.password) {
+			errors.password = 'Contraseña requerida';
+		} else if (!/^[A-Z0-9._%+-]{7,30}$/i.test(values.password)) {
+			errors.password = 'Minimo 7 caracteres';
+		}
 		return errors;
 	};
 
@@ -63,129 +55,133 @@ function UserForm() {
 	return (
 		<main className="user-form">
 			<h2 className='form-title'>Ingresa tus datos y registrate para reservar</h2>
+			<Formik
+				initialValues={{ _id: '', tipodoc: '', nombre: '', apellido: '', fnacimiento: '', genero: '', email: '', telefono: '', paisorigen: '', password: '', tipouser: 'huesped', img: '' }}
+				validate={validateForm}
+				onSubmit={(values, { setSubmitting }) => {
 
-		<Formik
-			initialValues={{ id: '', tipodoc:'', nombre: '', apellido:'', fnacimiento:'', genero:'', email:'', telefono:'', paisorigen:'', password:'', tipouser:'', img:'' }}
-			onSubmit={(values, { setSubmitting }) => {
-				
-				setTimeout(() => {
-					
-					alert(JSON.stringify(values, null, 2));
+					setTimeout(() => {
+					console.log(JSON.stringify(values, null, 2));
+					axios.post('https://hoteliakuepag7.herokuapp.com/users', values)
 					setSubmitting(false);
-				}, 1000);
-			}}
-			validate={validateForm}
-		>
-			{(formik, isSubmitting) => (
-				
-				<Form className="user-formgroup">
-					<div className="form-group">
-						<div>
-					<label htmlFor="tipodoc" className="form-label">Tipo de documento</label>
-					<Field id="tipodoc" name="tipodoc" as="select" multiple={false} className={(formik.touched.select && formik.errors.select) ? 'form-invalid' : 'form-select'} type="select">
-						<option value="0">Selecciona</option>
-						<option value="cc">Cedula de ciudadania</option>
-						<option value="ce">Cedula de extranjeria</option>
-						<option value="ti">Tarjeta de identidad</option>
-						{formik.touched.select && formik.errors.select ? (
-							<div className="invalid-feedback">{formik.errors.select}</div>
-						) : null}
-					</Field></div><div>
-						<label htmlFor="id" className='form-label'>Identificación</label>
-						<Field id="id" name="id" className={(formik.touched.idnumber && formik.errors.idnumber) ? 'form-invalid' : 'form-input'} type="number" />
-						{formik.touched.idnumber && formik.errors.idnumber ? (
-							<div className="invalid-feedback">{formik.errors.idnumber}</div>
-						) : null}
-					</div></div>
-					<div className="form-group">
-						<div>
-					<label for="fnacimiento" className='form-label'>Fecha de nacimiento</label>
-
-						<Field id="fnacimiento" className='form-input' type="date" name="fnacimiento" placeholder="Selecciona fecha de nacimiento"></Field>
+					}, 1000);
 					
-					</div>
-					<div>
-					<label htmlFor="paisorigen" className="form-label">Selecciona el país de origen</label>
-					<Field id="paisorigen" name="paisorigen" as="select" multiple={false} className={(formik.touched.select && formik.errors.select) ? 'form-invalid' : 'form-select'} type="select">
-						<option value="1">Nacionalidad</option>
-						<option value="2">Pais</option>
-						<option value="3">Region</option>
-						{formik.touched.select && formik.errors.select ? (
-							<div className="invalid-feedback">{formik.errors.select}</div>) : null}</Field>
-					</div>
-					</div>
-					<div className="form-group">
-						<div>
-						<label htmlFor="nombre" className="form-label">Nombre</label>
-						<Field id="nombre" name="nombre" className={(formik.touched.name && formik.errors.name) ? 'form-invalid' : 'form-input'} type="text" />
+				}}
+			>
+				{({
+					values,
+					errors,
+					touched,
+					handleChange,
+					handleBlur,
+					handleSubmit,
+					isSubmitting,
+					/* and other goodies */
+				}) => (
 
-						{formik.touched.name && formik.errors.name ? (
-							<div className="invalid-feedback">{formik.errors.name}</div>) : null}
-					</div><div>
-						<label htmlFor="apellido" className='form-label'>Apellido</label>
-						<Field id="apellido" name="apellido" className={(formik.touched.lastname && formik.errors.lastname) ? 'form-invalid' : 'form-input'} type="text" />
+					<form onSubmit={handleSubmit} className="user-formgroup">
+						<div className="form-group">
+							<div>
+								<label htmlFor="tipodoc" className="form-label">Tipo de documento</label>
+								<select id="tipodoc" name="tipodoc" onChange={handleChange} onBlur={handleBlur} value={values.tipodoc} className={(touched.tipodoc && errors.tipodoc) ? 'form-invalid' : 'form-select'} type="select">
+									<option value="0">Selecciona</option>
+									<option value="Cedula de ciudadania">Cedula de ciudadania</option>
+									<option value="Cedula de extranjeria">Cedula de extranjeria</option>
+									<option value="Tarjeta de identidad">Tarjeta de identidad</option>
+								</select>
+								{touched.tipodoc && errors.tipodoc ? (
+									<div className="invalid-feedback">{errors.tipodoc}</div>
+								) : null}</div><div>
+								<label htmlFor="_id" className='form-label'>Identificación</label>
+								<input id="_id" name="_id" onChange={handleChange} onBlur={handleBlur} value={values._id} className={(touched._id && errors._id) ? 'form-invalid' : 'form-input'} type="number" />
+								{touched._id && errors._id ? (
+									<div className="invalid-feedback">{errors._id}</div>
+								) : null}
+							</div></div>
+						<div className="form-group">
+							<div>
+								<label for="fnacimiento" className='form-label'>Fecha de nacimiento</label>
+								<input id="fnacimiento" onChange={handleChange} onBlur={handleBlur} value={values.fnacimiento} className='form-input' type="date" name="fnacimiento" placeholder="Selecciona fecha de nacimiento"></input>
 
-						{formik.touched.lastname && formik.errors.lastname ? (
-							<div className="invalid-feedback">{formik.errors.lastname}</div>) : null}
-					</div></div>
-					<div className="form-group">
-						
-					</div>
-					<div className="form-group">
-						<div>
-					<label className="form-label" htmlFor="img">Subir foto de perfil (opcional)</label>
-					<Field id="img" type="file" name="img" className="form" />
-					</div><div>
-						<label className='form-label' htmlFor='genero'>Genero</label>
-
-							<Field id="genero" className="form-check-input" type="radio" name="genero" value="hombre" />
-							<label className="form-" htmlFor="gridRadios1">Hombre</label>
-						
-							<Field id="genero1" className="form-check-input" type="radio" name="genero" value="mujer" />
-							<label className="form-" htmlFor="gridRadios2">Mujer</label>
+							</div>
+							<div>
+								<label htmlFor="paisorigen" className="form-label">Selecciona el país de origen</label>
+								<select id="paisorigen" name="paisorigen" onChange={handleChange} onBlur={handleBlur} value={values.paisorigen} className={(touched.paisorigen && errors.paisorigen) ? 'form-invalid' : 'form-select'} type="select">
+									<option value="0">Pais origen</option>
+									<option value="2">1</option>
+									<option value="3">2</option>
+									</select>
+									{touched.paisorigen && errors.paisorigen ? (
+										<div className="invalid-feedback">{errors.paisorigen}</div>
+									) : null}
+							</div>
 						</div>
-					</div>
-					<div className="form-group">
-						<div>
-						<label htmlFor="telefono" className="form-label">Telefono</label>
-						<Field id="telefono" name="telefono" className={(formik.touched.telephone && formik.errors.telephone) ? 'form-invalid' : 'form-input'} type="number" />
+						<div className="form-group">
+							<div>
+								<label htmlFor="nombre" className="form-label">Nombre</label>
+								<input id="nombre" name="nombre" onChange={handleChange} onBlur={handleBlur} value={values.nombre} className={(touched.nombre && errors.nombre) ? 'form-invalid' : 'form-input'} type="text" />
+								{touched.name && errors.name ? (
+									<div className="invalid-feedback">{errors.nombre}</div>
+								) : null}
+							</div><div>
+								<label htmlFor="apellido" className='form-label'>Apellido</label>
+								<input id="apellido" name="apellido" onChange={handleChange} onBlur={handleBlur} value={values.apellido} className={(touched.apellido && errors.apellido) ? 'form-invalid' : 'form-input'} type="text" />
+								{touched.apellido && errors.apellido ? (
+									<div className="invalid-feedback">{errors.apellido}</div>
+								) : null}
+							</div></div>
+						
+						<div className="form-group">
+							<div>
+								<label className="form-label" htmlFor="img">Subir foto de perfil (opcional)</label>
+								<input id="img" type="file" onChange={handleChange} onBlur={handleBlur} value={values.img} name="img" className="form" />
+							</div><div>
+								<label className='form-label' htmlFor='genero'>Genero</label>
+								<input id="genero" onChange={handleChange} onBlur={handleBlur} value={values.genero} className="form-check-input" type="radio" name="genero"/>
+								<label className="form-" htmlFor="gridRadios1">Hombre</label>
+								<input id="genero1" onChange={handleChange} onBlur={handleBlur} value={values.genero} className="form-check-input" type="radio" name="genero" />
+								<label className="form-" htmlFor="gridRadios2">Mujer</label>
+							</div>
+						</div>
+						<div className="form-group">
+							<div>
+								<label htmlFor="telefono" className="form-label">Telefono</label>
+								<input id="telefono" name="telefono" onChange={handleChange} onBlur={handleBlur} value={values.telefono} className={(touched.telefono && errors.telefono) ? 'form-invalid' : 'form-input'} type="number" />
+								{touched.telefono && errors.telefono ? (
+									<div className="invalid-feedback">{errors.telefono}</div>
+								) : null}
+							</div>
+							<div>
+								<label htmlFor="email" className='form-label'>Correo electrónico</label>
+								<input id="email" name="email" onChange={handleChange} onBlur={handleBlur} value={values.email} className={(touched.email && errors.email) ? 'form-invalid' : 'form-input'} type="email" />
 
-						{formik.touched.telephone && formik.errors.telephone ? (
-							<div className="invalid-feedback">{formik.errors.telephone}</div>) : null}
-					</div>
-					<div>
-					<label htmlFor="email" className='form-label'>Correo electrónico</label>
-						<Field id="email" name="email" className={(formik.touched.email && formik.errors.email) ? 'form-invalid' : 'form-input'} type="email" />
+								{touched.email && errors.email ? (
+									<div className="invalid-feedback">{errors.email}</div>
+								) : null}
+							</div></div>
 
-						{formik.touched.email && formik.errors.email ? (
-							<div className="invalid-feedback">{formik.errors.email}</div>
-						) : null}
-						</div></div>
-					
-					<div class="form-group">
-						<div>
-						<label htmlFor="password" className="form-label">Contraseña</label>
-					<Field id="password" type="password" name="password" className="form-input" placeholder="Contraseña"/>
-					</div>
-					<div>
-					<label htmlFor="password2" className="form-label">Repetir contraseña</label>
+						<div className="form-group">
+							<div>
+								<label htmlFor="password" className="form-label">Contraseña</label>
+								<input id="password" type="password" onChange={handleChange} onBlur={handleBlur} value={values.password} name="password" className="form-input" placeholder="Contraseña" />
+							</div>
+							<div>
+								<label htmlFor="password2" className="form-label">Repetir contraseña</label>
+								<input id="password2" type="password2" name="password2" className="form-input" placeholder="Repita la contraseña" />
+							</div>
+						</div>
+						<div className="form-group">
+							<input id="checkbox" name="checkbox" className="form-check-input" type="checkbox" />
+							<label className="form-label" htmlFor="checkbox">Acepto Terminos y Condiciones</label>
+							<Link to='/terminos'>Consulta aquí los terminos y condiciones de Hotelia</Link>
 
-					<Field id="password2" type="password2" name="password2" className="form-input" placeholder="Repita la contraseña"/>
-					</div>
-					</div>
-					<div class="form-group">
-						<Field id="checkbox" name="checkbox" className="form-check-input" type="checkbox"/>
-					<label className="form-label" htmlFor="checkbox">Acepto Terminos y Condiciones</label>
-					<Link to= '/terminos'>Consulta aquí los terminos y condiciones de Hotelia</Link>
-
-					</div>
-					<div className="form-group">
-						<button type="submit" className="btn btn-primary" disabled={isSubmitting} onClick={handleSubmit}>{isSubmitting ? "Cargando..." : "Enviar"} </button>
-					</div>
-				</Form>
-			)
-			}
-		</Formik >
+						</div>
+						<div className="form-group">
+							<button type="submit" className="form-submit" disabled={isSubmitting}>{isSubmitting ? "Cargando..." : "Enviar"} </button>
+						</div>
+					</form>
+                )}
+            </Formik>
 		</main>
 	);
 };

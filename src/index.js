@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.css';
 
 import Home from './pages/home/Home';
+
 import Login from './pages/login/Login';
 import PerfilUsuario from './pages/PerfilUsuario/Perfil';
 import ReservaUsuario from './pages/PerfilUsuario/Reserva';
@@ -12,11 +13,13 @@ import ReservaAdmin from './pages/PerfilAdmin/Reserva';
 import HabitacionesAdmin from './pages/PerfilAdmin/HabitacionesAdmin.js';
 import HabitacionesUsuario from './pages//PerfilUsuario/HabitacionesUsuario'
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path='/' element={<Home />}></Route>
+
       <Route path='/login' element={<Login />} />
       <Route path='/perfil' element={<PerfilUsuario />}></Route>
       <Route path='/reservas' element={<ReservaUsuario />}></Route>

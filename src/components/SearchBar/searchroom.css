@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.search-bar {
+    height: 80vh;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    font-family: Rubik, sans-serif;
+}
+.search-title {
+    text-align: center;
+}
+.search-content {
+    display: flex;
+    justify-content: center;
+    font-size: small;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+.search-item {
+    padding: 1rem 2rem;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.options-item {
+    text-align: center;
+    padding: 0.5rem;
+}
+.date {
+    position: relative;
+}
+.img-bground {
+    width: 100vw;
+    height: 50vh;
+    background-image: url(../../assets/img/image.png);
+    background-position: center;
+    background-size: cover;
+}
+.btn-search {
+    padding: 1rem 3rem;
+    background-color: #FF820D;
+    font-weight: bold;
+    color: whitesmoke;
+    border-style: none;
+    cursor: pointer;
+}

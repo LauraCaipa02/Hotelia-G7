@@ -6,15 +6,12 @@ import './index.css';
 import Home from './pages/home/Home';
 import Login from './pages/login/Login';
 import RegistroUsuario from './pages/registrouser/RegistroUsuario';
-
-import Login from './pages/login/Login';
 import PerfilUsuario from './pages/PerfilUsuario/Perfil';
 import ReservaUsuario from './pages/PerfilUsuario/Reserva';
 import FormularioRegistro from './components/FormularioRegistro/FormularioRegistro';
 import ReservaAdmin from './pages/PerfilAdmin/Reserva';
 import HabitacionesAdmin from './pages/PerfilAdmin/HabitacionesAdmin.js';
 import HabitacionesUsuario from './pages//PerfilUsuario/HabitacionesUsuario';
-import RegistroUsuario from './pages/registrouser/RegistroUsuario';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -79,8 +79,9 @@ function LoginUser() {
                     </form>
                 )}
             </Formik>
-            <p>¿No tienes una cuenta aún? <Link to='/registro'>Registrate aquí</Link></p>
-
+            <div className='login-register'>
+            <p >¿No tienes una cuenta aún? <Link to='/registro' >Registrate aquí</Link></p>
+            </div>
             </div>
             
         </main>

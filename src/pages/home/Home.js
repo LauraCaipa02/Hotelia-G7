@@ -1,12 +1,10 @@
 import React from "react";
-import Header from "../../components/header/Header";
-import Navbar from "../../components/navbar/Navbar";
+import SearchBar from "../../components/SearchBar/SearchRoom";
 
 function Home(){
     return(
         <main>
-            <Header />
-            <Navbar />
+            <SearchBar />
         </main>
     )
 }

@@ -1,10 +1,10 @@
-import { useState } from 'react';
 import { Formik } from 'formik';
 import './userform.css';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { CountryDropdown } from 'react-country-region-selector';
 
 function UserForm() {
 	const navigate = useNavigate();
@@ -56,16 +56,15 @@ function UserForm() {
 		<main className="user-form">
 			<h2 className='form-title'>Ingresa tus datos y registrate para reservar</h2>
 			<Formik
-				initialValues={{ _id: '', tipodoc: '', nombre: '', apellido: '', fnacimiento: '', genero: '', email: '', telefono: '', paisorigen: '', password: '', tipouser: 'huesped', img: '' }}
+				initialValues={{ _id: '', tipodoc: '', nombre: '', apellido: '', fnacimiento: '', genero: '', email: '', telefono: '', paisorigen: 'Colombia', password: '', tipouser: '', img: '' }}
 				validate={validateForm}
 				onSubmit={(values, { setSubmitting }) => {
-
+					
 					setTimeout(() => {
 					console.log(JSON.stringify(values, null, 2));
-					axios.post('https://hoteliakuepag7.herokuapp.com/users', values)
+					//axios.post('https://hoteliakuepag7.herokuapp.com/users', values);
 					setSubmitting(false);
 					}, 1000);
-					
 				}}
 			>
 				{({
@@ -106,11 +105,7 @@ function UserForm() {
 							</div>
 							<div>
 								<label htmlFor="paisorigen" className="form-label">Selecciona el país de origen</label>
-								<select id="paisorigen" name="paisorigen" onChange={handleChange} onBlur={handleBlur} value={values.paisorigen} className={(touched.paisorigen && errors.paisorigen) ? 'form-invalid' : 'form-select'} type="select">
-									<option value="0">Pais origen</option>
-									<option value="2">1</option>
-									<option value="3">2</option>
-									</select>
+								<CountryDropdown id="paisorigen" name="paisorigen" value={values.paisorigen} onChange={(_, e) => handleChange(e)} onBlur={handleBlur} className={(touched.paisorigen && errors.paisorigen) ? 'form-invalid' : 'form-select'}/>
 									{touched.paisorigen && errors.paisorigen ? (
 										<div className="invalid-feedback">{errors.paisorigen}</div>
 									) : null}
@@ -137,9 +132,9 @@ function UserForm() {
 								<input id="img" type="file" onChange={handleChange} onBlur={handleBlur} value={values.img} name="img" className="form" />
 							</div><div>
 								<label className='form-label' htmlFor='genero'>Genero</label>
-								<input id="genero" onChange={handleChange} onBlur={handleBlur} value={values.genero} className="form-check-input" type="radio" name="genero"/>
+								<input id='genero' name='genero' onChange={handleChange} onBlur={handleBlur} value='hombre' className="form-check-input" type="radio"/>
 								<label className="form-" htmlFor="gridRadios1">Hombre</label>
-								<input id="genero1" onChange={handleChange} onBlur={handleBlur} value={values.genero} className="form-check-input" type="radio" name="genero" />
+								<input id='genero' name='genero' onChange={handleChange} onBlur={handleBlur} value='mujer' className="form-check-input" type="radio" />
 								<label className="form-" htmlFor="gridRadios2">Mujer</label>
 							</div>
 						</div>

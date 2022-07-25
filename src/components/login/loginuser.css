@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+/*font-family: 'Rubik', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap');
+/*font-family: 'Antic Didone', serif;*/
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-/**/
+/*font-family: 'Libre Franklin', sans-serif;*/
 
 .login-container {
     width: 100vw;
@@ -38,7 +42,7 @@
     justify-content: center;
 }
 .login-label {
-    font-family: 'Libre Franklin', sans-serif;
+    font-family: 'Rubik', sans-serif;
     display: block;
 	font-size: medium;
     font-weight: bold;
@@ -77,4 +81,7 @@
     color: #157A8A;
     background-color: #ffffff;
     font-weight: bolder;
+}
+.login-register {
+    font-family: 'Antic Didone' serif;
 }

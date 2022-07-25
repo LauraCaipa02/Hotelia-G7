@@ -1,0 +1,28 @@
+.Headerdash{
+width: 360px;
+height: 80px;
+background: linear-gradient(180deg, #56C5D7 10.42%, rgba(21, 122, 138, 0.9) 58.85%), linear-gradient(180deg, rgba(21, 122, 138, 0.9) 18.23%, #56C5D7 88.54%);
+border-right: 1px solid #1EB6E7;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.img_header_dash{
+width: 190px;
+height: 52.29px;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+    .Headerdash{
+    display: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+}

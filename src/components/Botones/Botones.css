@@ -1,0 +1,79 @@
+.btn_oranje , .btn_blue{
+width: 265px;
+height: 30px;
+border-radius: 3px;
+font-family: var(--Rubik-font);
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+color: #FFFFFF;
+border:none;
+margin-top: 10px;
+text-align: center;
+}
+
+.btn_oranje_modal , .btn_blue_modal{
+    width: 120px;
+    height: 20px;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.btn_blue{
+background-color: #157A8A;
+}
+
+.btn_oranje{
+background-color: #ff820db3;
+}
+
+
+.btn_oranje:hover ,  
+.btn_oranje_modal:hover {
+    border: 1px solid #ff820db3;
+    color: #ff820db3;
+}
+
+.btn_blue:hover, .btn_blue_modal:hover{
+    border: 1px solid #157A8A;
+    color:#157A8A;
+}
+
+.btn_oranje:hover , .btn_blue:hover, 
+.btn_oranje_modal:hover , .btn_blue_modal:hover{
+    background-color:#FFFCF6 ;
+}
+
+
+.icon_btn{
+    margin-right:5px;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+.btn_oranje , .btn_blue{
+margin: auto 15px;
+width: 280px;
+height: 50px;
+font-size: 22px;
+line-height: 27px;
+}
+
+.btn_oranje_modal , .btn_blue_modal{
+    width: 110px;
+    height: 33px;
+    font-size: 23px;
+    line-height: 18px;
+    margin:20px 5px;
+}
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}

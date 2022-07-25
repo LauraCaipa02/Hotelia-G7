@@ -1,0 +1,148 @@
+.dash_nav,.overlay_hover{
+display: none;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+    .dash_nav{
+        display: block;
+        width: 100px;
+        height: 730px;
+        position: fixed;
+        left: 15px;
+        top: 15px;
+        background: linear-gradient(180deg, rgba(145, 225, 238, 0.71) 12.09%, rgba(21, 122, 138, 0.9) 48.55%), linear-gradient(180deg, #56C5D7 10.42%, rgba(21, 122, 138, 0.9) 58.85%), linear-gradient(180deg, #56C5D7 10.42%, rgba(21, 122, 138, 0.9) 58.85%), linear-gradient(180deg, #56C5D7 10.42%, rgba(21, 122, 138, 0.9) 58.85%);
+        border-radius: 0px 50px 50px 0px;
+    }
+
+    .logo_navd{
+        width: 80px;
+    }
+
+    .logo_navd img{
+        width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 70px auto;
+    }
+
+    .nav_menu_items{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 100px auto 150px;
+    width: 100%;
+    height: 30%;
+    list-style: none;
+    text-align: start;
+    }
+
+    .nav_menu_items li{
+    width: 100px;
+    height: 92px;   
+    border-radius: 0px 31px 0px 0px;
+    display: flex;
+    }
+
+    .nav_menu_items li:hover{
+    background-color: #333333;
+}
+
+    .icon_close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 80px;
+    height: 60px;
+    border-top: 1px solid#FFFFFF;
+}
+
+.overlay_hover{
+    display: block;
+    background-color: #33333347;
+
+}
+
+.dash_nav_hover{
+background: linear-gradient(180deg, rgba(145, 225, 238, 0.71) 12.09%, rgba(21, 122, 138, 0.9) 48.55%), linear-gradient(180deg, #56C5D7 10.42%, rgba(21, 122, 138, 0.9) 58.85%), linear-gradient(180deg, #56C5D7 10.42%, rgba(21, 122, 138, 0.9) 58.85%), linear-gradient(180deg, #56C5D7 10.42%, rgba(21, 122, 138, 0.9) 58.85%);
+border-radius: 0px 50px 50px 0px;
+width: 305px;
+height: 730px;
+position: fixed;
+left: 15px;
+top: 15px;
+opacity: 0;
+}
+
+.dash_nav_hover:hover, .overlay_hover:hover{
+    opacity: 1;
+    transition: all ease-in 0.5s;
+}
+
+.logo_navd_hover{
+    width: 118px;
+}
+
+.logo_navd_hover img{
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+}
+.nav_menu_items_hover{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:55px auto 170px;
+    width: 100%;
+    height: 30%;
+    list-style: none;
+    }
+.container_btn_nav_hover{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        text-align: left;
+        color: #FFFFFF;
+        text-decoration: none;
+        font-family: var(--Antic-font);
+        font-size: 30px;
+        -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+    }
+.icon_navdash_hover{
+    font-size: 32px;
+    margin-right: 15px;
+}
+.nav_menu_items_hover li{
+width: 293px;
+height: 91px;
+border-radius: 0px 31px 0px 0px;
+padding-left: 30px;
+display: flex;
+}
+.nav_menu_items_hover li:hover{
+    background-color: #333333;
+}
+
+.icon_close_hover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 250px;
+    height: 60px;
+    border-top: 1px solid#FFFFFF;
+}
+
+}
+
+
+@media screen and (min-width: 1200px) {
+
+}

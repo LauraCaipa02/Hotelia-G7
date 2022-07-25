@@ -91,7 +91,7 @@ function SearchBar () {
                                                 <div className="options-item">
                                                     <span>Mascotas</span>
                                                     <div className="options-button">
-                                                        <button onClick={() => handleOption("room", "decrement")} className='optionsBtn' disabled={options.room <= 1}>-</button>
+                                                        <button onClick={() => handleOption("room", "decrement")} className='optionsBtn' disabled={options.room <= 0}>-</button>
                                                         <span>{options.room}</span>
                                                         <button onClick={() => handleOption("room", "increment")} className='optionsBtn'>+</button>
                                                     </div>

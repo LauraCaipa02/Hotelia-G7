@@ -41,7 +41,7 @@ function SearchBar () {
 
 
     const handleSearch = () => {
-        navigate("/hotels", { state: { date, options } });
+        navigate("/busqueda", { state: { date, options } });
     }
 
     return (

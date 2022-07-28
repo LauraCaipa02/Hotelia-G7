@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic&family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box
+}
+.search-main {
+    display: flex;
+    flex-direction: column;
+}
+.search-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.roomcard-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #FFFCF6;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: fit-content;
+    border: 1.5px #3333336c solid;
+    border-radius: 8px;
+}
+
+.roomcard-title{
+    margin: 0.3rem auto;
+}
+
+.roomcard-title h3{
+    font-family: 'Antic', sans-serif;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; 
+    font-size: 1.5rem;
+    
+}
+
+.roomcard-items{
+    margin: 0.3rem auto; 
+}
+
+.roomcard-img img{
+   max-width: 300px;
+}
+
+.roomcard-description h4, .EspecificacionesContenidoCardHabitacionesAdmin h4, .PrecioContenidoCardHabitacionesAdmin h4, .EstadoContenidoCardHabitacionesAdmin h4{
+    font-family: 'Antic', sans-serif;
+    color: #045295;
+    margin-top: 0.4rem;
+    margin-bottom: 0.2rem;
+    font-size: 1.5rem;
+}
+
+.roomcard-description p, .EspecificacionesContenidoCardHabitacionesAdmin p, .PrecioContenidoCardHabitacionesAdmin p, .EstadoContenidoCardHabitacionesAdmin p{
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1rem;
+}
+
+.botonReservar{
+    width: 100%;
+    background-color: #FF820D;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px #cf6909 solid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.botonReservar:hover{
+    background-color: #FFFCF6;
+    color: #FF820D ;
+}
+.botonEditar{
+    width: 100%;
+    background-color: #157A8A;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px #0f6875 solid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.botonEditar:hover{
+    background-color: #FFFCF6;
+    color: #0f6875 ;
+}

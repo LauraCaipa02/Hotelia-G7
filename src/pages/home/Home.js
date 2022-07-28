@@ -1,6 +1,5 @@
 import React from "react";
 import SearchBar from "../../components/SearchBar/SearchRoom";
-
 function Home(){
     return(
         <main>

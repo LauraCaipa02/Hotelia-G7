@@ -46,9 +46,13 @@
 .btn-search {
     padding: 1rem 2rem;
     background-color: #FF820D;
-    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px #cf6909 solid;
     color: whitesmoke;
-    border-style: none;
     cursor: pointer;
     
 }

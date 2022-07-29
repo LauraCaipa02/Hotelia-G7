@@ -62,7 +62,7 @@ function UserForm() {
 					
 					setTimeout(() => {
 					console.log(JSON.stringify(values, null, 2));
-					//axios.post('https://hoteliakuepag7.herokuapp.com/users', values);
+					axios.post('https://hoteliakuepag7.herokuapp.com/users', values);
 					setSubmitting(false);
 					}, 1000);
 				}}

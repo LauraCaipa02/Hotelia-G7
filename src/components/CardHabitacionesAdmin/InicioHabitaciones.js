@@ -1,7 +1,6 @@
 import './vistahabitaciones.css';
 import React, { useEffect, useState } from 'react';
 import { TodasHabitaciones } from '../../functions/funciones';
-import ItemHotels from './ItemHotels';
 import { format } from 'date-fns'
 import { DateRange } from 'react-date-range'
 import { useLocation } from 'react-router-dom'
@@ -41,54 +40,42 @@ function InicioHabitaciones() {
                                 <div className="search">
                                     
 
-                                    <div className="searchItem">
+                                    <div className="search-group search-groupttl">
                                         <label>Check-in </label>
-                                        <label onClick={() => setOpenDate(!openDate)}>{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(date[0].endDate, "MM/dd/yyyy")}`}</label>
+                                        <label onClick={() => setOpenDate(!openDate)}>{`${format(date[0].startDate, "MM/dd/yyyy")} a ${format(date[0].endDate, "MM/dd/yyyy")}`}</label>
                                         {openDate && (<DateRange onChange={(item) => setDate([item.selection])} minDate={new Date()} ranges={date} className="searchDate" />)}
                                     </div>
 
-                                    <div className="searchItem">
-                                        <div className="searchOptions">
-                                            <div className="searchOptionsItem">
+                                    <div className="search-group">
+                                            <div className="search-opt">
                                                 <label className="searchOptionsText">Precio minimo</label>
                                                 <input type="number" onChange={e => setMin(e.target.value)} className="searchOptionsInput" />
                                             </div>
-                                            <div className="searchOptionsItem">
+                                            <div className="search-opt">
                                                 <label className="searchOptionsText">Precio maximo</label>
                                                 <input type="number" onChange={e => setMax(e.target.value)} className="searchOptionsInput" />
                                             </div>
-                                            <div className="searchOptionsItem">
+                                            <div className="search-opt">
                                                 <label className="searchOptionsText">Adultos</label>
                                                 <input type="number" min={1} className="searchOptionsInput" placeholder={options.adult} />
                                             </div>
-                                            <div className="searchOptionsItem">
+                                            <div className="search-opt">
                                                 <label className="searchOptionsText">Niños</label>
                                                 <input type="number" min={0} className="searchOptionsInput" placeholder={options.children} />
                                             </div>
-                                            <div className="searchOptionsItem">
+                                            <div className="search-opt">
                                                 <label className="searchOptionsText">Mascotas</label>
                                                 <input type="number" min={1} className="searchOptionsInput" placeholder={options.room} />
                                             </div>
-                                        </div>
                                     </div>
-                                    <div className="searchItem">
-                                        <button className='btnSearch' onClick={handleClick}>Buscar</button>
+                                    <div className="search-group">
+                                        <button className='button-options' onClick={handleClick}>Buscar</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="hotelsCol">
-                            <div className='listHotels'>
-                                {
-                                    loading ? (<h2>Loading...</h2>) : (
-                                        <>
-                                            {data.map((item =>
-                                                <ItemHotels item={item} key={item._id} />
-                                            ))}
-                                        </>
-                                    )
-                                }
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -132,7 +119,7 @@ function InicioHabitaciones() {
                                 </div>
                                 <div className='roomcard-button'>
                                     <button className='botonReservar'>Reservar</button>
-                                    <button className='botonEditar'>Editar</button>
+                                    <button className='botonEditar'>Ver más</button>
                                 </div>
                             </div>
                         </div>

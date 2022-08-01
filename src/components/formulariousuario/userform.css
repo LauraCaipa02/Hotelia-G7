@@ -64,8 +64,7 @@ flex-direction: column;
     text-align: left;
 }
 .form-invalid {
-        max-width: 500px;
-        width: 100%;
+        width: 220px;
         height: 2rem;
         margin: 0rem 0.5rem;
         border: 2px solid #e92b2d;
@@ -79,7 +78,7 @@ flex-direction: column;
     text-align: center;
 }
 .form-check-input {
-    margin: 0 2rem 0rem 1rem;
+    margin: 0 1rem 0rem 1rem;
 }
 .form-submit {
     cursor: pointer;
@@ -102,4 +101,11 @@ flex-direction: column;
     color: #157A8A;
     background-color: #ffffff;
     font-weight: bolder;
+}
+.user-hidden {
+    visibility: hidden;
+    overflow: hidden;
+}
+input[type="file"] {
+    margin: 0 2rem;
 }

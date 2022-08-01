@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 .search-bar {
-    height: 80vh;
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
@@ -13,16 +12,18 @@
 .search-content {
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
     justify-content: center;
     font-size: small;
     background-image: url(../../assets/img/image.png);
     background-position: center;
     background-size: cover;
     color: white;
-    height: 60vh;
+    height: 70vh;
 }
+
 .search-item {
-    height: 25%;
+    height: 4rem;
     padding: 1rem 1rem;
     display: flex;
     flex-direction: column;
@@ -44,7 +45,7 @@
 }
 
 .btn-search {
-    padding: 1rem 2rem;
+    padding: 0.8rem 2rem;
     background-color: #FF820D;
     font-family: 'Rubik', sans-serif;
     font-size: 1rem;
@@ -56,11 +57,8 @@
     cursor: pointer;
     
 }
-@media screen and (min-width: 500px) {
-    .search-item {
-            height: 20%;
-            padding: 1rem 2rem;}
-            .btn-search {
-                padding: 1rem 3rem;
-            }
+@media screen and (min-width: 700px) {
+    .btn-search { 
+        padding: 0.6rem 2rem;  
     }
+}

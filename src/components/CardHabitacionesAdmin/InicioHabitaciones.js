@@ -4,7 +4,6 @@ import { TodasHabitaciones } from '../../functions/funciones';
 import { format } from 'date-fns'
 import { DateRange } from 'react-date-range'
 import { useLocation } from 'react-router-dom'
-import useFetch from './useFetch'
 function InicioHabitaciones() {
 
 
@@ -17,76 +16,65 @@ function InicioHabitaciones() {
     const [openDate, setOpenDate] = useState(false)
     const [date, setDate] = useState(location.state.date)
     const [options, setOptions] = useState(location.state.options)
-    const [min, setMin] = useState(undefined)
-    const [max, setMax] = useState(undefined)
 
-    const { data, loading, error, reFetch } = useFetch(`&min=${min || 0}&max=${max || 9999}`);
-    //console.log(data);
-
-    const handleClick = () => {
-        reFetch();
-    }
     function handleSortAsc() {
-        const sortedDataAsc = [...Habitaciones].sort((a, b) => {return a.valornoche < b.valornoche ? -1 : 1});
+        const sortedDataAsc = [...Habitaciones].sort((a, b) => { return a.valornoche < b.valornoche ? -1 : 1 });
         setHabitaciones(sortedDataAsc);
         // setSampleData("");
     }
-  function handleSortDsc() {
-    const sortedDataDsc = [...Habitaciones].sort((a, b) =>
-      (Number(a.valornoche) < Number(b.valornoche) ? 1 : -1)
-    );
-    setHabitaciones(sortedDataDsc);
-  }
+    function handleSortDsc() {
+        const sortedDataDsc = [...Habitaciones].sort((a, b) =>
+            (Number(a.valornoche) < Number(b.valornoche) ? 1 : -1)
+        );
+        setHabitaciones(sortedDataDsc);
+    }
+
     return (
         <div className='search-main'>
 
             <div className='search-column'>
-                <div className="hotelsContainer">
-                    <div className="hotelsRow">
-                        <div className="hotelsCol">
-                            <div className='searchHotels'>
-                                <div className="search">
-                                    
 
-                                    <div className="search-group search-groupttl">
-                                        <label>Check-in </label>
-                                        <label onClick={() => setOpenDate(!openDate)}>{`${format(date[0].startDate, "MM/dd/yyyy")} a ${format(date[0].endDate, "MM/dd/yyyy")}`}</label>
-                                        {openDate && (<DateRange onChange={(item) => setDate([item.selection])} minDate={new Date()} ranges={date} className="searchDate" />)}
-                                    </div>
+                <div className='searchHotels'>
+                    <div className="search">
 
-                                    <div className="search-group">
-                                            <div className="search-opt">
-                                                <button onClick={handleSortAsc}>Precio de menor a mayor</button>
-                                                
-                                            </div>
-                                            <div className="search-opt">
-                                                 <button onClick={handleSortDsc}>Precio de mayor a menor</button>
-                                                
-                                            </div>
-                                            <div className="search-opt">
-                                                <label className="searchOptionsText">Adultos</label>
-                                                <input type="number" min={1} className="searchOptionsInput" placeholder={options.adult} />
-                                            </div>
-                                            <div className="search-opt">
-                                                <label className="searchOptionsText">Niños</label>
-                                                <input type="number" min={0} className="searchOptionsInput" placeholder={options.children} />
-                                            </div>
-                                            <div className="search-opt">
-                                                <label className="searchOptionsText">Mascotas</label>
-                                                <input type="number" min={1} className="searchOptionsInput" placeholder={options.room} />
-                                            </div>
-                                    </div>
-                                    <div className="search-group">
-                                        <button className='button-options' onClick={handleClick}>Buscar</button>
-                                    </div>
-                                </div>
+
+                        <div className="search-group search-groupttl">
+                            <label>Check-in </label>
+                            <label onClick={() => setOpenDate(!openDate)}>{`${format(date[0].startDate, "MM/dd/yyyy")} a ${format(date[0].endDate, "MM/dd/yyyy")}`}</label>
+                            {openDate && (<DateRange onChange={(item) => setDate([item.selection])} minDate={new Date()} ranges={date} className="searchDate" />)}
+                        </div>
+
+                        <div className="search-group">
+                            <div className="search-opt">
+                                <button onClick={handleSortAsc}>Precio de menor a mayor</button>
+
+                            </div>
+                            <div className="search-opt">
+                                <button onClick={handleSortDsc}>Precio de mayor a menor</button>
+
+                            </div>
+                            <div className="search-opt">
+                                <label className="searchOptionsText">Adultos</label>
+                                <input type="number" min={1} className="searchOptionsInput" placeholder={options.adult} />
+                            </div>
+                            <div className="search-opt">
+                                <label className="searchOptionsText">Niños</label>
+                                <input type="number" min={0} className="searchOptionsInput" placeholder={options.children} />
+                            </div>
+                            <div className="search-opt">
+                                <label className="searchOptionsText">Mascotas</label>
+                                <input type="number" min={0} className="searchOptionsInput" placeholder={options.pet} />
                             </div>
                         </div>
-                        <div className="hotelsCol">
-                            
+                        <div className="search-group">
+                            <button className='button-options' >Buscar</button>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="hotelsCol">
+
+
 
             </div>
             <div className="room-container">
@@ -110,12 +98,12 @@ function InicioHabitaciones() {
                                         <h4>Número de habitación:</h4>
                                         <p>{Habitacion._id}</p>
                                     </div>
-                                    
+
                                     <div className='roomcard-price'>
                                         <h4>Precio:</h4>
                                         <p>COP${Habitacion.valornoche}</p>
                                     </div>
-                                    
+
                                 </div>
                                 <div className='roomcard-button'>
                                     <button className='botonReservar'>Reservar</button>

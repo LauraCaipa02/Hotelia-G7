@@ -9,10 +9,22 @@
     background-color: #FFFCF6;
     margin: 0 auto;
 	max-width: 1000px;
-	width: 100%;
+	width: 90%;
 	color: #41341F;
     padding: 3rem;
 	display: flex;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+    .user-form {
+        padding: 1rem;
+    }
+    .form-title {
+        font-size: larger;
+        margin: 1rem;
+        width: 300px;
+    }
+    
 }
 .form-title {
     font-family: 'Rubik', sans-serif;
@@ -46,7 +58,7 @@ flex-direction: column;
 }
 .form-group {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: baseline;
     margin-bottom: 1rem;
 }

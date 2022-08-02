@@ -57,7 +57,7 @@ function UserForm() {
 
 	return (
 		<main className="user-form">
-			<h2 className='form-title'>Ingresa tus datos y registrate para reservar</h2>
+			<h3 className='form-title'>Ingresa tus datos y registrate para reservar</h3>
 			<Formik
 				initialValues={{ _id: '', tipodoc: '', nombre: '', apellido: '', fnacimiento: '', genero: '', email: '', telefono: '', paisorigen: 'Colombia', password: '', tipouser: 'huesped', img: 'https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png' }}
 				validate={validateForm}
@@ -150,7 +150,7 @@ function UserForm() {
 							<div>
 								<label className="form-label" htmlFor="img">Subir foto de perfil (opcional)</label>
 								<input id="img" type="file" onChange={handleChange} onBlur={handleBlur} name="img" className="form" placeholder='holi'/>
-							</div><div>
+							</div><div className='form-check'>
 								<label className='form-label' htmlFor='genero'>Genero</label>
 								<input id='genero' name='genero' onChange={handleChange} onBlur={handleBlur} value='hombre' className="form-check-input" type="radio"/>
 								<label className="form-" htmlFor="gridRadios1">Hombre</label>
@@ -197,12 +197,12 @@ function UserForm() {
 						<div className="form-group">
 							<input id="checkbox" name="checkbox" className="form-check-input" type="checkbox" required/>
 							<label className="form-label" htmlFor="checkbox">Acepto Terminos y Condiciones</label>
-							<Link to='/terminos'>Consulta aquí los terminos y condiciones de Hotelia</Link>
+							<Link to='/terminos'>Consulta aquí términos y condiciones</Link></div>
 							<div className='user-hidden'>
 								<label htmlFor="tipouser" className="form-label">Usuario</label>
 								<input id="tipouser" type="text" name="tipouser" className="form-input" placeholder="huesped" />
 							</div>
-						</div>
+						
 						<div className="form-group">
 							<button type="submit" className="form-submit" disabled={isSubmitting}>{isSubmitting ? "Cargando..." : "Enviar"} </button>
 						</div>

@@ -64,6 +64,14 @@ font-size: 22px;
 line-height: 27px;
 }
 
+.btn_pb {
+    margin-right: 50px !important;
+}
+
+.btn_po{
+    margin-left: 20px;
+}
+
 .btn_oranje_modal , .btn_blue_modal{
     width: 110px;
     height: 33px;

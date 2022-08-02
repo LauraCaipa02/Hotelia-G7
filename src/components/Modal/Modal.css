@@ -1,5 +1,5 @@
 .formc{
-    width: 90%;
+    width: 95%;
     margin: auto auto;
 }
 .label_modal{
@@ -7,7 +7,7 @@
     font-size: 15px;
     line-height: 18px;
     color: #045295;
-    width: 100%;
+    width: 90%;
 }
 
 .input_modal{
@@ -38,6 +38,7 @@
 
 .container_li{
     display: flex;
+    align-items: center;
 }
 
 @media screen and (min-width: 768px) {
@@ -49,6 +50,7 @@
     .label_modal{
         font-size: 21px;
         line-height: 21px;
+        margin: auto auto;
     }
 
     .input_modal{

@@ -7,19 +7,22 @@ import Imageperfil from "../../components/PerfilUsuario/Fotoperfil";
 import Boton from "../Botones/Botones";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../Modal/Modal";
-import Foto from '../../assets/img/christina-wocintechchat-com-lFntEHwQvi4-unsplash.jpg'
+//import { InfoID } from "../CardsReserva/ReservaAdmin";
+import { Complement } from "../CardsReserva/ReservaAdmin";
 
 
-function Info() {
+function InfoUserA() {
     const [estadoModalDatos, cambiarEstadoDatos] = useState(false);
     const [estadoModalDatosC, cambiarEstadoDatosC] = useState(false);
 
     //1.Definir url del api a la que me va a conectar
-    const url = "https://hoteliakuepag7.herokuapp.com/users/1234567890";
+    const url = "https://hoteliakuepag7.herokuapp.com/users";
+    console.log(Complement)
 
     //2. Generar función asincrona
     const getData = async () => {
-        const response = axios.get(url);
+        const response = axios.get(`${url}`);
+        console.log(response)
         return response;
     };
 
@@ -102,7 +105,9 @@ function Info() {
             setList(response.data);
         });
     }, []); //Se actualiza el listado cada vez que cambie el estado up List
-    console.log('Hola');
+    //console.log('Hola');
+
+
 
     return (
         <main className="maininfo">
@@ -269,4 +274,4 @@ function Info() {
     );
 }
 
-export default Info;
+export default InfoUserA;

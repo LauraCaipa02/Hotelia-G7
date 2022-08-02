@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../img/logo2.png';
+import Logo from '../../assets/img/logo2.png';
 import './Header.css';
 
 function Headerdash() {

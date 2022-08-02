@@ -62,6 +62,7 @@ const Overlay=styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
+    z-index:100;
     @media (min-width: 1200px){
 		height:100vh;
 	}

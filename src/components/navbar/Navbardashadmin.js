@@ -2,8 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBed,faUserAstronaut,faCalendarCheck,faArrowRightFromBracket,faFolderPlus} from '@fortawesome/free-solid-svg-icons';
 import './Navbar.css';
-import Logo from '../../img/LogoSolo.png'
-import LogoHover from '../../img/logo.png'
+import Logo from '../../assets/img/LogoSolo.png'
+import LogoHover from '../../assets/img/logo.png'
 
 function Navdashadmin() {
     return (

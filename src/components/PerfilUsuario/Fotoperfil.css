@@ -4,7 +4,7 @@
 }
 
 .img_perfil{
-    border: 1px solid #333333;
+    border: 1px solid #3a3a3a60;
     border-radius: 15px;
     width: 125px;
     height: 150px;
@@ -12,48 +12,80 @@
 }
 
 .hover_img{
-background: rgba(51, 51, 51, 0.63);
-backdrop-filter: blur(4px);
-border-radius: 0px 0px 15px 15px;
-font-family: var(--Antic-font);
-font-style: normal;
-font-weight: 400;
-font-size: 13px;
-line-height: 15px;
-color: rgba(255, 255, 255, 0.94);
-width: 125px;
-height: 24px;
-position: absolute;
-top:76.4%;
-left: 29.6%;
-text-align: right;
-padding-right:8px;
-opacity: 0;
-border: none;
-z-index: 10;
+    background: rgba(51, 51, 51, 0.63);
+    backdrop-filter: blur(4px);
+    border-radius: 0px 0px 15px 15px;
+    font-family: var(--Antic-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: rgba(255, 255, 255, 0.94);
+    width: 125px;
+    height: 24px;
+    position: absolute;
+    top:76.4%;
+    left: 22.6%;
+    text-align: right;
+    padding-right:8px;
+    opacity: 0;
+    border: none;
+    z-index: 10;
+}
+
+.hover_img:hover{
+    opacity: 1;
+}
+
+.Container_img{
+    position: relative;
+    background-color: var(--light-gray);
+    width: 90%;
+    height: 30px;
+    margin: auto;
+    border-radius: 3px;
+    border:none;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.label_img{
+    position: absolute;
+    width: 90%;
+    height: 30px;
+    top:0%;
+    left: 5%;
+    cursor: pointer;
+    background-color: none;
+    border:none;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--Rubik-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
 }
 
 .input_img{
-width: 122px;
-height: 24px;
-position: absolute;
-top:76.4%;
-left: 29.6%;
-opacity: 0;
-border-radius: 15px;
-cursor: pointer;
-background-color: none;
-border:none;
-z-index: 100;
+    position: absolute;
+    width: 90%;
+    height: 40px;
+    top:0;
+    left: 0;
+    opacity:0;
+    cursor: pointer;
+    background-color: none;
+    border:none;
+    z-index: 100;
 }
 
 .icon {
     margin-left:3px;
     width: 12px;
-}
-
-.input_img:hover ~ .hover_img {
-    opacity: 1;
 }
 
 @media screen and (min-width: 768px) {
@@ -70,78 +102,42 @@ z-index: 100;
     .hover_img{
         border-radius: 0px 0px 27px 27px;
         font-size: 21px;
-        line-height: 15px;
         width: 250px;
         height: 47.41px;
         position: absolute;
-        top:80.3%;
-        left: 40.2%;
+        top:48.7%;
+        left: 0%;
         text-align: right;
         padding-right:15px;
         opacity: 0;
-        border: none;
-        }
+    }
 
     .icon {
         margin:0 6px;
         width: 20px;
     }
 
-    .input_img{
-        width: 230px;
-        height: 47.41px;
-        top:83.3%;
-        left: 42.2%;
+    .Container_img{
+        width: 50%;
+        height: 35px;
+    }
+    
+    .label_img{
+        position: absolute;
+        font-size: 22px;
+        line-height: 20px;
+        padding-top:2px ;
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .hover_img,.input_img{
-        border-radius: 0px 0px 27px 27px;
-        font-size: 21px;
-        line-height: 15px;
-        width: 250px;
-        height: 47.41px;
-        position: absolute;
-        top:80%;
-        left: 37.8%;
-        text-align: right;
-        padding-right:15px;
-        opacity: 0;
-        border: none;
-        }
+
 }
 
 @media screen and (min-width: 1600px) {
-    .hover_img,.input_img{
-        border-radius: 0px 0px 27px 27px;
-        font-size: 21px;
-        line-height: 15px;
-        width: 250px;
-        height: 47.41px;
-        position: absolute;
-        top:80%;
-        left: 40.7%;
-        text-align: right;
-        padding-right:15px;
-        opacity: 0;
-        border: none;
-        }
+
 }
 
 @media screen and (min-width: 1700px) {
-    .hover_img,.input_img{
-        border-radius: 0px 0px 27px 27px;
-        font-size: 21px;
-        line-height: 15px;
-        width: 250px;
-        height: 47.41px;
-        position: absolute;
-        top:80%;
-        left: 42.35%;
-        text-align: right;
-        padding-right:15px;
-        opacity: 0;
-        border: none;
-        }
+
 }

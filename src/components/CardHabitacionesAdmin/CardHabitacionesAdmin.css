@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic&family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box
+}
+
+.PrincipalCardHabitacionesAdmin{
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(4, auto);
+    column-gap: 1rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #FFFCF6;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    border: 1.5px #3333336c solid;
+    border-radius: 8px;
+}
+
+.NombreContenidoCardHabitacionesAdmin{
+    grid-column: 1/-1;
+    grid-row: 1/2; 
+    margin: 0.3rem auto;
+}
+
+.NombreContenidoCardHabitacionesAdmin h3{
+    font-family: 'Antic', sans-serif;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; 
+    font-size: 1.6rem;
+    
+}
+
+.ImgCardHabitacionesAdmin{
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    margin: 0.3rem auto; 
+}
+
+.DescripcionContenidoCardHabitacionesAdmin h4, .EspecificacionesContenidoCardHabitacionesAdmin h4, .PrecioContenidoCardHabitacionesAdmin h4, .EstadoContenidoCardHabitacionesAdmin h4{
+    font-family: 'Antic', sans-serif;
+    color: #045295;
+    margin-top: 0.4rem;
+    margin-bottom: 0.2rem;
+    font-size: 1.5rem;
+}
+
+.DescripcionContenidoCardHabitacionesAdmin p, .EspecificacionesContenidoCardHabitacionesAdmin p, .PrecioContenidoCardHabitacionesAdmin p, .EstadoContenidoCardHabitacionesAdmin p{
+    font-family: 'Libre Franklin', sans-serif;
+    margin-top: 0.2rem;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.BotonesCardHabitacionesAdmin{
+    grid-column: 1/-1;
+    grid-row: 4/5; 
+}
+
+.botonReservar{
+    width: 100%;
+    background-color: #FF820D;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px #cf6909 solid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.botonReservar:hover{
+    background-color: #FFFCF6;
+    color: #FF820D ;
+}
+.botonEditar{
+    width: 100%;
+    background-color: #157A8A;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px #0f6875 solid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.botonEditar:hover{
+    background-color: #FFFCF6;
+    color: #0f6875 ;
+}
+    
+
+@media (min-width: 1024px){
+.PrincipalCardHabitacionesAdmin{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, auto);
+    column-gap: 1rem;
+    margin: 1rem auto;
+    padding: 1rem;
+    width: 70%;
+}
+.NombreContenidoCardHabitacionesAdmin{
+    grid-column: 2/10;
+    grid-row: 1/2; 
+    text-align: left;
+    margin-left: 0px;
+}
+.NombreContenidoCardHabitacionesAdmin h3{
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-bottom: 0rem;
+    margin: 0rem;
+}
+
+.ImgCardHabitacionesAdmin{
+    grid-column: 1/2;
+    grid-row: 1/-1; 
+}
+.ContenidoCardHabitacionesAdmin{
+    grid-column: 2/10;
+    grid-row: 2/3; 
+}
+
+.DescripcionContenidoCardHabitacionesAdmin{
+    margin-top: 0.1rem;
+}
+
+.DescripcionContenidoCardHabitacionesAdmin h4, .EspecificacionesContenidoCardHabitacionesAdmin h4, .PrecioContenidoCardHabitacionesAdmin h4, .EstadoContenidoCardHabitacionesAdmin h4{
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+    font-size: 0.95rem;
+}
+
+.DescripcionContenidoCardHabitacionesAdmin p, .EspecificacionesContenidoCardHabitacionesAdmin p, .PrecioContenidoCardHabitacionesAdmin p, .EstadoContenidoCardHabitacionesAdmin p{
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+    font-size: 0.75rem;
+}
+
+.BotonesCardHabitacionesAdmin{
+    grid-column: 11/13;
+    grid-row: 1/-1; 
+}
+
+
+.botonReservar{
+    width: 100%;
+    background-color: #FF820D;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px #cf6909 solid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.botonReservar:hover{
+    background-color: #FFFCF6;
+    color: #FF820D ;
+}
+.botonEditar{
+    width: 100%;
+    background-color: #157A8A;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px #0f6875 solid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.botonEditar:hover{
+    background-color: #FFFCF6;
+    color: #0f6875 ;
+}
+
+}

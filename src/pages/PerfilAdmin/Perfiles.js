@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {useState,useEffect } from 'react';
-import Info from '../../components/PerfilUsuario/Perfil';
+import InfoUserA from '../../components/PerfilUsuario/PerfilUsuario';
 import Title from '../../components/Titles/Titles';
 import Navdash from '../../components/navbar/Navbardash';
 import Headerdash from '../../components/header/Headerdash';
 import Footerdash from '../../components/Footer/Footerdash';
 
-function PerfilUsuario(){
+function PerfilesUsuario(){
 
     return(
         <section className="informacion">
@@ -15,11 +15,11 @@ function PerfilUsuario(){
             <Navdash />
             <div>
                 <Title nombre="PERFIL USUARIO"/>
-                <Info/>
+                <InfoUserA/>
             </div>
             <Footerdash/>
         </section>
     )
 }
 
-export default PerfilUsuario;
+export default PerfilesUsuario;

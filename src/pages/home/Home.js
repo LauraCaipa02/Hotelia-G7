@@ -6,7 +6,6 @@ function Home(){
         <main>
             <SearchBar />
             <Link to="/login">Inicia sesión</Link>
-
         </main>
     )
 }

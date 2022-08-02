@@ -8,6 +8,14 @@
     gap: 3rem;
     padding: 2rem;
 }
+@media screen and (max-width: 600px) {
+    .search-main {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        padding: 2rem;
+    }
+}
 .search-list {
     display: flex;
     flex-wrap: wrap;
@@ -21,6 +29,7 @@
     border-radius: 8px;
     width: 300px;
 }
+
 .search-group {
     padding: 0.5rem;
 }
@@ -55,21 +64,25 @@
     background-color: #FFFCF6;
     color: #0f6875 ;
 }
-.roomcard-container{
+
+.room-container {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    padding: 1rem;
+}
+.roomcard-container{
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    padding: 0.5rem;
     background-color: #FFFCF6;
-    justify-content: center;
     align-items: center;
-    height: fit-content;
     border: 1.5px #3333336c solid;
     border-radius: 8px;
 }
 
 .roomcard-title{
-    margin: 0.3rem auto;
+    margin: 0.3rem;
 }
 
 .roomcard-title h3{
@@ -80,7 +93,7 @@
 }
 
 .roomcard-items{
-    margin: 0.3rem auto; 
+    margin: 0.3rem; 
 }
 
 .roomcard-description h4{
@@ -94,6 +107,14 @@
 .roomcard-description p{
     font-family: 'Libre Franklin', sans-serif;
     font-size: 1rem;
+}
+.roomcard-price {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bolder;
+    font-size: large;
 }
 
 .botonReservar{

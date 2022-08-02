@@ -5,7 +5,6 @@ import { format } from 'date-fns'
 import { DateRange } from 'react-date-range'
 import { useLocation } from 'react-router-dom'
 import useFetch from './useFetch'
-
 function InicioHabitaciones() {
 
 
@@ -15,7 +14,6 @@ function InicioHabitaciones() {
     }, [])
 
     const location = useLocation();
-    const [destination, setDestination] = useState(location.state.destination)
     const [openDate, setOpenDate] = useState(false)
     const [date, setDate] = useState(location.state.date)
     const [options, setOptions] = useState(location.state.options)
@@ -28,7 +26,17 @@ function InicioHabitaciones() {
     const handleClick = () => {
         reFetch();
     }
-
+    function handleSortAsc() {
+        const sortedDataAsc = [...Habitaciones].sort((a, b) => {return a.valornoche < b.valornoche ? -1 : 1});
+        setHabitaciones(sortedDataAsc);
+        // setSampleData("");
+    }
+  function handleSortDsc() {
+    const sortedDataDsc = [...Habitaciones].sort((a, b) =>
+      (Number(a.valornoche) < Number(b.valornoche) ? 1 : -1)
+    );
+    setHabitaciones(sortedDataDsc);
+  }
     return (
         <div className='search-main'>
 
@@ -48,12 +56,12 @@ function InicioHabitaciones() {
 
                                     <div className="search-group">
                                             <div className="search-opt">
-                                                <label className="searchOptionsText">Precio minimo</label>
-                                                <input type="number" onChange={e => setMin(e.target.value)} className="searchOptionsInput" />
+                                                <button onClick={handleSortAsc}>Precio de menor a mayor</button>
+                                                
                                             </div>
                                             <div className="search-opt">
-                                                <label className="searchOptionsText">Precio maximo</label>
-                                                <input type="number" onChange={e => setMax(e.target.value)} className="searchOptionsInput" />
+                                                 <button onClick={handleSortDsc}>Precio de mayor a menor</button>
+                                                
                                             </div>
                                             <div className="search-opt">
                                                 <label className="searchOptionsText">Adultos</label>
@@ -81,7 +89,7 @@ function InicioHabitaciones() {
                 </div>
 
             </div>
-            <>
+            <div className="room-container">
                 {Habitaciones != null ? (
                     Habitaciones.map(Habitacion => (
 
@@ -102,20 +110,12 @@ function InicioHabitaciones() {
                                         <h4>Número de habitación:</h4>
                                         <p>{Habitacion._id}</p>
                                     </div>
-                                    <div className='roomcard-items'>
-                                        <h4>Especificaciones:</h4>
-                                        <p>Nevera y televisión: {Habitacion.tv}</p>
-                                        <p>Caja fuerte: {Habitacion.cajafuerte}</p>
-                                        <p>Baño privado: {Habitacion.banio}</p>
-                                    </div>
+                                    
                                     <div className='roomcard-price'>
                                         <h4>Precio:</h4>
-                                        <p>{Habitacion.valornoche}</p>
+                                        <p>COP${Habitacion.valornoche}</p>
                                     </div>
-                                    <div className='roomcard-state'>
-                                        <h4>Estado:</h4>
-                                        <p>Disponible</p>
-                                    </div>
+                                    
                                 </div>
                                 <div className='roomcard-button'>
                                     <button className='botonReservar'>Reservar</button>
@@ -127,7 +127,7 @@ function InicioHabitaciones() {
 
 
                 ) : ('no hay habitaciones')}
-            </>
+            </div>
         </div>
     )
 }

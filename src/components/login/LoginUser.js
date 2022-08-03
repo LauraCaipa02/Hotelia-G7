@@ -8,11 +8,12 @@ import axios from 'axios';
 
 function LoginUser() {
 	const navigate=useNavigate();
-
+    
     return (
         
-        <main className='login-container'>
+        <main className='login-bg login-container'>
             <div className='login-box'>
+                <div className='login-box-inner'>
                 <img src={Logo} alt='logo' className='login-logo'/>
                 <h3 className='login-heading'>Inicia sesión</h3>
                 <Formik
@@ -83,7 +84,7 @@ function LoginUser() {
             <p >¿No tienes una cuenta aún? <Link to='/registro' >Registrate aquí</Link></p>
             </div>
             </div>
-            
+            </div>
         </main>
     )
                 }

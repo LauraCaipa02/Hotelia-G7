@@ -1,13 +1,14 @@
 import { faCalendar } from '@fortawesome/free-regular-svg-icons'
 import { faBed, faCamera, faCar, faPerson, faPlane, faTaxi } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { DateRange } from 'react-date-range'
 import 'react-date-range/dist/styles.css'; // main css file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from 'date-fns'
 import { Link, useNavigate } from 'react-router-dom'
 import './searchroom.css';
+import { TodasHabitaciones } from '../../functions/funciones'
 
 
 function SearchBar () {
@@ -25,7 +26,7 @@ function SearchBar () {
     const [options, setOptions] = useState({
         adult: 1,
         children: 0,
-        room: 0
+        pet: 0
     })
 
     const navigate = useNavigate();
@@ -41,7 +42,7 @@ function SearchBar () {
 
 
     const handleSearch = () => {
-        navigate("/hotels", { state: { date, options } });
+        navigate("/busqueda", { state: { date, options } });
     }
 
     return (
@@ -68,7 +69,7 @@ function SearchBar () {
 
                                 <div className="search-item">
                                     <FontAwesomeIcon icon={faPerson} />
-                                    <span onClick={() => setOpenOptions(!openOptions)}>{`${options.adult} adultos - ${options.children} niños - ${options.room} mascotas`}</span>
+                                    <span onClick={() => setOpenOptions(!openOptions)}>{`${options.adult} adultos - ${options.children} niños - ${options.pet} mascotas`}</span>
                                     {
                                         openOptions && (
                                             <div className="options-list">
@@ -83,7 +84,7 @@ function SearchBar () {
                                                 <div className="options-item">
                                                     <span>Niños</span>
                                                     <div className="options-button">
-                                                        <button onClick={() => handleOption("children", "decrement")} className='optionsBtn' disabled={options.children <= 0}>-</button>
+                                                        <button onClick={() => handleOption("children", "decrement")} className='optionsBtn' disabled={options.children <= 0}> - </button>
                                                         <span>{options.children}</span>
                                                         <button onClick={() => handleOption("children", "increment")} className='optionsBtn'>+</button>
                                                     </div>
@@ -91,9 +92,9 @@ function SearchBar () {
                                                 <div className="options-item">
                                                     <span>Mascotas</span>
                                                     <div className="options-button">
-                                                        <button onClick={() => handleOption("room", "decrement")} className='optionsBtn' disabled={options.room <= 1}>-</button>
-                                                        <span>{options.room}</span>
-                                                        <button onClick={() => handleOption("room", "increment")} className='optionsBtn'>+</button>
+                                                        <button onClick={() => handleOption("pet", "decrement")} className='optionsBtn' disabled={options.pet <= 0}> - </button>
+                                                        <span>{options.pet}</span>
+                                                        <button onClick={() => handleOption("pet", "increment")} className='optionsBtn'>+</button>
                                                     </div>
                                                 </div>
                                             </div>

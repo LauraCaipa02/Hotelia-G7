@@ -12,7 +12,7 @@ import FormularioRegistro from './components/FormularioRegistro/FormularioRegist
 import ReservaAdmin from './pages/PerfilAdmin/Reserva';
 import HabitacionesAdmin from './pages/PerfilAdmin/HabitacionesAdmin.js';
 import HabitacionesUsuario from './pages//PerfilUsuario/HabitacionesUsuario';
-
+import RoomSearch from './pages/roomsearch/RoomSearch';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,6 +28,7 @@ root.render(
       <Route path='/admin/habitaciones' element={<HabitacionesAdmin />}></Route>
       <Route path='/habitaciones' element={<HabitacionesUsuario />}></Route>
       <Route path='/registro' element={<RegistroUsuario />}></Route>
+      <Route path='/busqueda' element={<RoomSearch />}></Route>
 
     </Routes>
     </BrowserRouter>

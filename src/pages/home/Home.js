@@ -1,12 +1,15 @@
 import React from "react";
-import Header from "../../components/header/Header";
+import SearchBar from "../../components/SearchBar/SearchRoom";
 import Navbar from "../../components/navbar/Navbar";
-
+import RoomType from "../../components/SearchBar/RoomType";
+import FooterDerlHeader from "../../components/Footer/FooterDerlHeader";
 function Home(){
     return(
         <main>
-            <Header />
             <Navbar />
+            <SearchBar />
+            <RoomType />
+            <FooterDerlHeader />
         </main>
     )
 }

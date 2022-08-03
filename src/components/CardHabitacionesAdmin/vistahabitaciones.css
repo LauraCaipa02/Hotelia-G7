@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Antic&family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box
+}
+.search-main {
+    display: flex;
+    gap: 3rem;
+    padding: 2rem;
+}
+@media screen and (max-width: 600px) {
+    .search-main {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        padding: 2rem;
+    }
+}
+.search-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.search-column {
+    background-color: #FF820D;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    padding: 1rem;
+    height: fit-content;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.search-group {
+    padding: 0.5rem;
+}
+.search-groupttl {
+    background-color: rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+
+}
+.search-opt {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin: 0.3rem 0;
+}
+.search-opt input {
+    width: 100px;
+}
+.button-options {
+    background-color: #ffffff;
+    color: #0f6875;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px #FF820D solid;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.button-options:hover{
+    background-color: #333333;
+    color: #ffffff ;
+}
+.button-sort {
+    background-color: #333333;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    border: 1px #0f6875 solid;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.button-sort:hover{
+    background-color: #FFFCF6;
+    color: #0f6875 ;
+}
+.room-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.roomcard-container{
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    padding: 0.5rem;
+    background-color: #FFFCF6;
+    align-items: center;
+    border: 1.5px #3333336c solid;
+    border-radius: 8px;
+}
+
+.roomcard-title{
+    margin: 0.3rem;
+}
+
+.roomcard-title h3{
+    font-family: 'Antic', sans-serif;
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    
+}
+
+.roomcard-items{
+    margin: 0.3rem; 
+}
+
+.roomcard-description h4{
+    font-family: 'Antic', sans-serif;
+    color: #045295;
+    margin-top: 0.4rem;
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+}
+
+.roomcard-description p{
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1rem;
+}
+.roomcard-price {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.botonReservar{
+    width: 100%;
+    background-color: #FF820D;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px #cf6909 solid;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+.botonReservar:hover{
+    background-color: #FFFCF6;
+    color: #FF820D ;
+}
+.botonEditar{
+    width: 100%;
+    background-color: #157A8A;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px #0f6875 solid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.botonEditar:hover{
+    background-color: #FFFCF6;
+    color: #0f6875 ;
+}

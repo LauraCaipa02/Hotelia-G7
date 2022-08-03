@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.search-bar {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    font-family: Rubik, sans-serif;
+}
+.search-title {
+    text-align: center;
+    font-family: 'Antic Didone', serif;
+    font-size: 1.1rem;
+}
+.search-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    font-size: small;
+    background-image: url(../../assets/img/image.png);
+    background-position: center;
+    background-size: cover;
+    color: white;
+    height: 70vh;
+}
+
+.search-item {
+    height: 4rem;
+    padding: 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.options-button span{
+    margin: 0 0.2rem;
+}
+.options-item {
+    text-align: center;
+    padding: 0.5rem 1rem;
+    background-color: #FF820D;
+    z-index: 1000;
+}
+.date {
+    position: relative;
+}
+
+.btn-search {
+    padding: 0.8rem 2rem;
+    background-color: #FF820D;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px #cf6909 solid;
+    color: whitesmoke;
+    cursor: pointer;
+    
+}
+@media screen and (min-width: 700px) {
+    .btn-search { 
+        padding: 0.6rem 2rem;  
+    }
+}
+.room-title {
+    margin-top: 2rem;
+    text-align: center;
+    font-family: 'Antic Didone', serif;
+    letter-spacing: 3px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+.room-type {
+    margin: 1rem 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-family: Rubik, sans-serif;
+}
+.room-img {
+    max-width: 400px;
+    width: 90%;
+}
+@media screen and (max-width: 650px) {
+    .room-type {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .room-img {
+        max-width: 300px;
+    }
+}

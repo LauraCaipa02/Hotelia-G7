@@ -3,7 +3,7 @@ import axios from "axios";
 import './reserva.css';
 import {faAngleUp,faAngleDown} from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import habitacion1 from '../../assets/img/WhatsApp Image 2022-07-08 at 7.00.58 PM.jpeg';
+import habitacion1 from '../../assets/grid/room1.png';
 import Boton from '../Botones/Botones';
 import Swal from 'sweetalert2';
 

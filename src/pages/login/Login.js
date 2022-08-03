@@ -4,6 +4,8 @@ import Navbar from "../../components/navbar/Navbar";
 import LoginUser from "../../components/login/LoginUser";
 
 function Login(){
+
+    
     return(
         <main>
             <LoginUser/>

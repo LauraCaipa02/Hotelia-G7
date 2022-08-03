@@ -141,8 +141,60 @@ display: flex;
 }
 
 }
-
-
 @media screen and (min-width: 1200px) {
 
+}
+/*//////////////////////////////////////////////////////////////////////////////*/
+
+.navbar-header {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+    .navbar-header {
+        margin: 2rem 1rem 0 1rem;
+        display: flex; 
+        flex-direction: row;}
+    .navbar-logo {
+        max-width: 300px;
+        margin-left: 1rem;
+        }
+}
+.navbar-logo {
+    display: block;
+    margin: 0 auto;
+    height: 4rem;
+    width: 10rem;
+    background-image: url(./logo2.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.nav-ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    font-size: large;
+
+}
+.nav-li a{
+    text-decoration-line: none;
+    color: #333333;
+    font-weight: 500;
+}
+.nav-li i{
+    color: #FF820D;
+}
+.nav-li {
+    padding: 1rem 2rem;
+}
+.nav-li:hover {
+    color: #FFFFFF;
+    background-color: #FF820D;
+}
+.nav-li a:hover {
+    color: #FFFFFF;
+    background-color: #FF820D;
 }

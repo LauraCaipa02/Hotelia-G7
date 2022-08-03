@@ -1,23 +1,22 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import './FormularioRegistro.css';
 import plushab from '../../assets/img/plushab.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo, faBook, faCirclePlus, faCamera } from '@fortawesome/free-solid-svg-icons';
-import { Link} from "react-router-dom";
+import { Link, useLocation, useNavigate} from "react-router-dom";
 import Swal from 'sweetalert2';
-import { render } from '@testing-library/react';
-import { useNavigate } from "react-router-dom";
 
 
+function ActualizarHab() {
+    let navigate= useNavigate();
+    let navigateOne= useNavigate();
 
+    const {state} = useLocation();
+    const id = state;
+    console.log("console id "+id);
+    /*editar*/
 
-function FormularioRegistro() {
-    let navigate = useNavigate();
-    let navigateOne = useNavigate();
-
-
-    /*esta constante es para actualizar cuando se envie*/
 
     const [data, SetData] = useState({ _id: "", nombrehab: "", estado:"", capacidad: "", camas: "", descripcion: "", wifi: "", tv: "", banio: "", cajafuerte: "", nevera: "", valornoche: "", img: "" })
 
@@ -29,11 +28,11 @@ function FormularioRegistro() {
         })
     }
 
-    const url = "https://hoteliakuepag7.herokuapp.com/habitaciones"
+    const url = "https://hoteliakuepag7.herokuapp.com/habitaciones/"+id
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await axios.post(url, data);
+        const response = await axios.put(url, data);
         console.log(response)
 
         if (response.status === 200) {
@@ -46,7 +45,7 @@ function FormularioRegistro() {
                 timer: 1500
               })
             
-            navigate("/HabAdmin");
+            navigate("/habiadmin");
         } else {
             Swal.fire(
                 'No se pudo registrar la habitación',
@@ -65,18 +64,16 @@ function FormularioRegistro() {
           })
         navigateOne("/");
     }
-    
-    
-   
+
     return (
         <form onSubmit={handleSubmit}>
 
             <div className='PrincipalFormularioRegistro'>
                 <div className='AnuncioFormularioRegistro'>
-                    <h2>Registro de Habitaciones</h2>                   
+                    <h2>Actuzalizar Habitaciones</h2>
                 </div>
                 <div className='DatosFormularioRegistro'>
-                    <h3 className='TitleDatosFormularRegistro'><FontAwesomeIcon icon={faCircleInfo} className='item'/>Datos Básicos de la habitación </h3>
+                    <h3 className='TitleDatosFormularRegistro'><FontAwesomeIcon icon={faCircleInfo} className='item' />Datos Básicos de la habitación </h3>
 
                     <div className='data1'>
                         <label className='labelf NombreHab'>Nombre de la habitación</label>
@@ -102,14 +99,6 @@ function FormularioRegistro() {
                             value={data._id}
                         />
                     </div>
-                    <div className='data3'>
-                        <label className='labelf NumHab'>Estado</label>
-                        <select className='inputf' name="estado" onChange={handleChange} value={data.estado} required>
-                                <option value="0"></option>
-                                <option value="Disponible">Disponible</option>
-                                <option value="No disponible">No disponible</option>
-                            </select>
-                    </div>
 
                 </div>
 
@@ -121,8 +110,8 @@ function FormularioRegistro() {
                             className='inputf'
                             name="valornoche"
                             required
-                            type="number"
-                            placeholder="$200.000"
+                            type="text"
+                            placeholder="$200000"
                             onChange={handleChange}
                             value={data.valornoche}
                         />
@@ -216,14 +205,14 @@ function FormularioRegistro() {
                     </div>
                 </div>
                 <div className='BotonesFormularioRegistro'>
-                    <button className='botonCancel' type="reset" onClick={cancelar}> Cancelar</button>
-                    <button className='botonSave' type="submit">Guardar</button>
+                    <button className='botonCancel' type="reset" onClick={cancelar}>Cancelar </button>
+                    <button className='botonSave' type="submit">Actualizar</button>
                 </div>
             </div>
         </form>
     );
 
-    
+
 
 }
-export default FormularioRegistro;
+export default ActualizarHab;

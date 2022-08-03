@@ -73,7 +73,7 @@ function Navdashadmin() {
                 <li>
                     <a href='/perfil'className='container_btn_nav_hover'>
                         <FontAwesomeIcon icon={faUserAstronaut} className="icon_navdash_hover" />
-                        <p>Usuarios</p>
+                        <p>Perfil</p>
                     </a>
                 </li>
             </ul>

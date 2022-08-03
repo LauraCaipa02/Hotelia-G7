@@ -3,19 +3,17 @@ import React from 'react';
 import Swal from 'sweetalert2';
 import "./Perfil.css";
 import { useState, useEffect } from "react";
-import Imageperfil from "../../components/PerfilUsuario/Fotoperfil";
+import Imageperfile from "./Fotoperfile";
 import Boton from "../Botones/Botones";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../Modal/Modal";
-import Foto from '../../assets/img/christina-wocintechchat-com-lFntEHwQvi4-unsplash.jpg'
 
-
-function Info() {
+function Infoe() {
     const [estadoModalDatos, cambiarEstadoDatos] = useState(false);
     const [estadoModalDatosC, cambiarEstadoDatosC] = useState(false);
 
     //1.Definir url del api a la que me va a conectar
-    const url = "https://hoteliakuepag7.herokuapp.com/users/1357908642";
+    const url = "https://hoteliakuepag7.herokuapp.com/users/13432678";
 
     //2. Generar función asincrona
     const getData = async () => {
@@ -107,7 +105,7 @@ function Info() {
     return (
         <main className="maininfo">
             <div className="container_pandi">
-                <Imageperfil 
+                <Imageperfile 
                 foto={`https://hoteliakuepag7.herokuapp.com${list.img}`} 
                 descf={"susana"}
                 estadof={dataModal.img}
@@ -269,4 +267,4 @@ function Info() {
     );
 }
 
-export default Info;
+export default Infoe;

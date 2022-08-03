@@ -1,32 +1,23 @@
 import React from 'react';
 import axios from "axios";
 import './Fotoperfil.css';
-import { useState , useEffect} from "react";
+import { useState} from "react";
 import {faPenToSquare} from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from '../Modal/Modal';
 import Swal from 'sweetalert2';
 
-const Imageperfil = ({foto,descf,estadof,nombref,estado,
+const ImageperfilA = ({foto,descf,estadof,nombref,estado,
     cambiarEstado,}) => {
 
-    const url = "https://hoteliakuepag7.herokuapp.com/users/1357908642";
-
-    //2. Generar función asincrona
-    const getData = async () => {
-        const response = axios.get(url);
-        return response;
-    };
-
-    //3. UseState para guardar la respuesta de la petición
-
-    const [list, setList] = useState([]);
+    const url = "https://hoteliakuepag7.herokuapp.com/users/1234567890";
 
     const [estadoModalDatosF, cambiarEstadoDatosF] = useState(false);
     const [dataModal,setDataModal]=useState({});
 
     const handleChangeModal=({target})=>{ //tarteg permite generar un nuevo evento
-        setDataModal({...dataModal,[target.name]:target.value});
+        setDataModal({...dataModal,[target.name]:target.value
+        });
     }
     
     //5. Agregar una constante para actualiaar el estado del modal 
@@ -43,7 +34,7 @@ const Imageperfil = ({foto,descf,estadof,nombref,estado,
         console.log(response);
 
         if(dataModal.img!=null){
-            const validar="hola"+dataModal.img
+            const validar="hola"
             console.log(validar)
             console.log(dataModal.img);
             Swal.fire(
@@ -52,7 +43,7 @@ const Imageperfil = ({foto,descf,estadof,nombref,estado,
                 'success'
             )
             handleClose();
-            window.location.href='/perfil'
+            window.location.href='/admin/perfil'
             setUplist(!upList);
         }else{
             const validar="chao"
@@ -65,13 +56,6 @@ const Imageperfil = ({foto,descf,estadof,nombref,estado,
         }
         
     }
-    //6. Hook useEffect ejecuta funciones cada vez que renderizamos un componente.
-    useEffect(() => {
-        getData().then((response) => {
-            setList(response.data);
-        });
-    }, [upList]); //Se actualiza el listado cada vez que cambie el estado up List
-    console.log('Hola');
 
     return (
         <>
@@ -100,7 +84,6 @@ const Imageperfil = ({foto,descf,estadof,nombref,estado,
                     onChange={handleChangeModal}
                     className="input_img"
                     />
-                    
                     </div>
                 </div>
             </Modal>
@@ -108,4 +91,4 @@ const Imageperfil = ({foto,descf,estadof,nombref,estado,
     );
 }
 
-export default Imageperfil;
+export default ImageperfilA;

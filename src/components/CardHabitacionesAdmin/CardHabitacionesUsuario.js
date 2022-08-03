@@ -1,37 +1,39 @@
 import React from 'react';
 import './CardHabitacionesAdmin.css';
-import habitacion1 from '../../assets/grid/room1.png';
+import habitacion1 from '../../assets/img/WhatsApp Image 2022-07-08 at 7.00.58 PM.jpeg';
 
-function CardHabitacionesUsuario() {
+function CardHabitacionesUsuario({rooms}) {
+
     return (
-        <div className='PrincipalCardHabitacionesAdmin'>
+        <div className='PrincipalCardHabitacionesAdmin' key={rooms._id}>
             <div className='ImgCardHabitacionesAdmin'>
                 <img src={habitacion1} alt='' className='imgCard' />
             </div>
             <div className='NombreContenidoCardHabitacionesAdmin'>
-                    <h3>Nombre de la habitación</h3>
+                    <h3>{rooms.nombrehab}</h3>
             </div>
             <div className='ContenidoCardHabitacionesAdmin'>
 
                 <div className='DescripcionContenidoCardHabitacionesAdmin'>
                     <h4>Descripción:</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+                    <p>{rooms.descripcion}</p>
                 </div>
                 <div className='EspecificacionesContenidoCardHabitacionesAdmin'>
-                    <h4>Especificaciones:</h4>
-                    <p>Nevera y televisión</p>
-                    <p>Caja fuerte</p>
-                    <p>Balcón con vista</p>
-                    <p>Espacio de 30m2</p>
-                    <p>Baño privado</p>
+                    {/*arreglar logica*/} 
+                    <h4>Especificaciones:</h4> 
+                    <p>Televisión: {rooms.tv}</p>
+                    <p>Nevera: {rooms.nevera}</p>
+                    <p>Caja fuerte: {rooms.cajafuerte}</p>
+                    <p>Wi-Fi: {rooms.wifi}</p>
+                    <p>Baño privado: {rooms.banio}</p>
                 </div>
                 <div className='PrecioContenidoCardHabitacionesAdmin'>
                     <h4>Precio:</h4>
-                    <p>$100.000 COP. noche</p>
+                    <p>${rooms.valornoche} noche</p>
                 </div>
                 <div className='EstadoContenidoCardHabitacionesAdmin'>
                     <h4>Estado:</h4>
-                    <p>Disponible</p>
+                    <p>{rooms.estado}</p>
                 </div>
             </div>
             <div className='BotonesCardHabitacionesAdmin'>

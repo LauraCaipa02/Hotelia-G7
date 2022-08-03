@@ -1,0 +1,72 @@
+.formc{
+    width: 95%;
+    margin: auto auto;
+}
+.label_modal{
+    font-family: var(--Antic-font);
+    font-size: 15px;
+    line-height: 18px;
+    color: #045295;
+    width: 90%;
+}
+
+.input_modal{
+    background: #FFFFFF;
+    border: 1px solid #3a3a3a60;
+    height: 24px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    font-family: var(--LibreFranklin-font);
+    font-size: 12px;
+    line-height: 20px;
+    color: rgba(25, 25, 25, 0.9);
+    padding: 0 5px;
+    margin: 5px 0;
+}
+.input_modalp{
+    width: 29%;
+    margin-right:5px;
+}
+
+.input_modalt{
+    width:71%;
+}
+
+.input_modals{
+    width: 100%;
+}
+
+.container_li{
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    .label_modal{
+        font-size: 21px;
+        line-height: 21px;
+        margin: auto auto;
+    }
+
+    .input_modal{
+        height: 30px;
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .containerc_li{
+    display: flex;
+}
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+
+

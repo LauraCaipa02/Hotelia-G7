@@ -1,24 +1,23 @@
 import React from 'react';
-//import CardHabitacionesAdmin from '../../components/CardHabitacionesAdmin/CardHabitacionesAdmin'
+import InfoA from '../../components/PerfilAdmin/PerfilA';
 import Title from '../../components/Titles/Titles';
 import Navdashadmin from '../../components/navbar/Navbardashadmin';
 import Headerdash from '../../components/header/Headerdash';
 import Footerdash from '../../components/Footer/Footerdash';
-//import BarraDeBusquedaListHab from '../../components/BarraDeBusqueda/BarraDeBusquedaListHab'
 
-function HabitacionesAdmin(){
+function PerfilesUsuario(){
+
     return(
         <section className="informacion">
             <Headerdash/>
             <Navdashadmin />
             <div>
-                <Title nombre="Reservas"/>
-                {/* <BarraDeBusquedaListHab/>
-                <CardHabitacionesAdmin/> */}
+                <Title nombre="PERFIL USUARIO"/>
+                <InfoA/>
             </div>
             <Footerdash/>
         </section>
     )
 }
 
-export default HabitacionesAdmin;
+export default PerfilesUsuario;

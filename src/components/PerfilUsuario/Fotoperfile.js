@@ -7,10 +7,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from '../Modal/Modal';
 import Swal from 'sweetalert2';
 
-const Imageperfil = ({foto,descf,estadof,nombref,estado,
+const Imageperfile = ({foto,descf,estadof,nombref,estado,
     cambiarEstado,}) => {
 
-    const url = "https://hoteliakuepag7.herokuapp.com/users/1357908642";
+    const url = "https://hoteliakuepag7.herokuapp.com/users/13432678";
 
     //2. Generar función asincrona
     const getData = async () => {
@@ -108,4 +108,4 @@ const Imageperfil = ({foto,descf,estadof,nombref,estado,
     );
 }
 
-export default Imageperfil;
+export default Imageperfile;

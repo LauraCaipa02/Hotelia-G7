@@ -1,0 +1,132 @@
+.maininfo{
+    box-sizing: border-box;
+    width: 85%;
+    margin: 10px auto;
+}
+
+.containerd{
+    display: flex;
+}
+
+.container_pandi{
+    background:#FFFCF6;
+    border: 1px solid #3a3a3a60;
+    padding: 15px;
+    width: 85%;
+    margin:auto auto;
+    border-radius: 5px;
+}
+
+.label{
+    font-family: var(--Antic-font);
+    font-size: 15px;
+    line-height: 18px;
+    color: #045295;
+}
+
+.input{
+height: 24px;
+/* border: 1px solid #3a3a3a60;
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+border-radius: 5px; */
+font-family: var(--LibreFranklin-font);
+font-size: 12px;
+line-height: 20px;
+color: rgba(25, 25, 25, 0.9);
+margin: 5px 0;
+}
+
+.inputt{
+    margin-left:5px;
+    flex-basis:87% ;
+    line-height: 22px;
+}
+
+.inputp{
+    margin-right:5px;
+    flex-basis:13% ;
+    padding-right:7px;
+    line-height: 22px;
+    text-align: center;
+}
+.inputinput{
+    width: 100%;
+    font-size: 20px;
+    color: rgba(25, 25, 25, 0.9);
+    border: none;
+    background: none;
+}
+
+.container_btn_pu{
+    text-align: center;
+    margin: 5px auto;
+}
+
+.container_btn_pu {
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+    .container_info{
+        margin-left: 40px;
+    }
+    .maininfo{
+        margin-top: 10px;
+        margin-left: 170px;
+    }
+
+    .container_pandi{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        background:#FFFCF6;
+        border: 1px solid #3a3a3a60;
+        padding: 15px;
+        width: 60%;
+        margin:auto auto;
+        border-radius: 5px;
+    }
+
+
+    /* .container_info{
+        margin-bottom: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap:0.5em;
+        column-gap: 1.5em;
+    } */
+
+    .label{
+        font-size: 21px;
+        line-height: 21px;
+    }
+
+    .input{
+        height: 30px;
+        font-family: var(--LibreFranklin-font);
+        font-size: 16px;
+        line-height: 28px;
+        color: rgba(25, 25, 25, 0.9);
+        margin: 5px 0;
+    }
+    
+    .inputt{
+        margin-left:10px;
+    }
+    
+    .inputp{
+        margin-right:10px;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+
+

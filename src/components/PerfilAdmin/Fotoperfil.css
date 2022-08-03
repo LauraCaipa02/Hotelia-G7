@@ -1,0 +1,143 @@
+.container_img{
+    position: relative;
+    text-align: center;
+}
+
+.img_perfil{
+    border: 1px solid #3a3a3a60;
+    border-radius: 15px;
+    width: 125px;
+    height: 150px;
+    margin: 15px 0;
+}
+
+.hover_img{
+    background: rgba(51, 51, 51, 0.63);
+    backdrop-filter: blur(4px);
+    border-radius: 0px 0px 15px 15px;
+    font-family: var(--Antic-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    color: rgba(255, 255, 255, 0.94);
+    width: 125px;
+    height: 24px;
+    position: absolute;
+    top:76.4%;
+    left: 22.6%;
+    text-align: right;
+    padding-right:8px;
+    opacity: 0;
+    border: none;
+    z-index: 10;
+}
+
+.hover_img:hover{
+    opacity: 1;
+}
+
+.Container_img{
+    position: relative;
+    background-color: var(--light-gray);
+    width: 90%;
+    height: 30px;
+    margin: auto;
+    border-radius: 3px;
+    border:none;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.label_img{
+    position: absolute;
+    width: 90%;
+    height: 30px;
+    top:0%;
+    left: 5%;
+    cursor: pointer;
+    background-color: none;
+    border:none;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--Rubik-font);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+}
+
+.input_img{
+    position: absolute;
+    width: 90%;
+    height: 40px;
+    top:0;
+    left: 0;
+    opacity:0;
+    cursor: pointer;
+    background-color: none;
+    border:none;
+    z-index: 100;
+}
+
+.icon {
+    margin-left:3px;
+    width: 12px;
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+    .img_perfil{
+        border-radius: 27px;
+        width: 250px;
+        height: 300px;
+    }
+
+    .hover_img{
+        border-radius: 0px 0px 27px 27px;
+        font-size: 21px;
+        width: 250px;
+        height: 47.41px;
+        position: absolute;
+        top:48.7%;
+        left: 0%;
+        text-align: right;
+        padding-right:15px;
+        opacity: 0;
+    }
+
+    .icon {
+        margin:0 6px;
+        width: 20px;
+    }
+
+    .Container_img{
+        width: 50%;
+        height: 35px;
+    }
+    
+    .label_img{
+        position: absolute;
+        font-size: 22px;
+        line-height: 20px;
+        padding-top:2px ;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1600px) {
+
+}
+
+@media screen and (min-width: 1700px) {
+
+}

@@ -3,26 +3,21 @@ import React from 'react';
 import Swal from 'sweetalert2';
 import "./Perfil.css";
 import { useState, useEffect } from "react";
-import Imageperfil from "../../components/PerfilUsuario/Fotoperfil";
+import ImageperfilA from "./FotoperfilA";
 import Boton from "../Botones/Botones";
 import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../Modal/Modal";
-//import { InfoID } from "../CardsReserva/ReservaAdmin";
-import { Complement } from "../CardsReserva/ReservaAdmin";
 
-
-function InfoUserA() {
+function InfoA() {
     const [estadoModalDatos, cambiarEstadoDatos] = useState(false);
     const [estadoModalDatosC, cambiarEstadoDatosC] = useState(false);
 
     //1.Definir url del api a la que me va a conectar
-    const url = "https://hoteliakuepag7.herokuapp.com/users";
-    console.log(Complement)
+    const url = "https://hoteliakuepag7.herokuapp.com/users/1234567890";
 
     //2. Generar función asincrona
     const getData = async () => {
-        const response = axios.get(`${url}`);
-        console.log(response)
+        const response = axios.get(url);
         return response;
     };
 
@@ -105,14 +100,12 @@ function InfoUserA() {
             setList(response.data);
         });
     }, []); //Se actualiza el listado cada vez que cambie el estado up List
-    //console.log('Hola');
-
-
+    console.log('Hola');
 
     return (
         <main className="maininfo">
             <div className="container_pandi">
-                <Imageperfil 
+                <ImageperfilA 
                 foto={`https://hoteliakuepag7.herokuapp.com${list.img}`} 
                 descf={"susana"}
                 estadof={dataModal.img}
@@ -274,4 +267,4 @@ function InfoUserA() {
     );
 }
 
-export default InfoUserA;
+export default InfoA;

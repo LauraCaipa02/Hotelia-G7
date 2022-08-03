@@ -4,11 +4,11 @@ import {faAngleDown} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Boton from '../Botones/Botones';
 
-export const Complement = (iduser) => {
-    iduser={iduser}
-    console.log(iduser)
-}
-console.log(Complement)
+// export const Complement = (iduser) => {
+//     iduser={iduser}
+//     console.log(iduser)
+// }
+
 
 // function InfoID({iduser}){
 //     Complement={iduser};
@@ -25,12 +25,12 @@ function CardAdmin({booking}){
     const dataRoom=room[0];
     console.log(dataRoom.nombrehab)
 
-    const handleLink=()=>{
-        const idUser=dataUser._id;
-        console.log(idUser);
-        <Complement iduser={dataUser._id}/>;
-        window.location.href='/admin/perfil';
-    }
+    // const handleLink=()=>{
+    //     const idUser=dataUser._id;
+    //     console.log(idUser);
+    //     <Complement iduser={dataUser._id}/>;
+    //     window.location.href='/admin/perfil';
+    // }
 
     return (
     <main className='maininfor'>

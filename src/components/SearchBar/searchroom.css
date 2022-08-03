@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 .search-bar {
-    margin-top: 3rem;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
     font-family: Rubik, sans-serif;
 }
 .search-title {
     text-align: center;
+    font-family: 'Antic Didone', serif;
+    font-size: 1.1rem;
 }
 .search-content {
     display: flex;
@@ -60,5 +62,34 @@
 @media screen and (min-width: 700px) {
     .btn-search { 
         padding: 0.6rem 2rem;  
+    }
+}
+.room-title {
+    margin-top: 2rem;
+    text-align: center;
+    font-family: 'Antic Didone', serif;
+    letter-spacing: 3px;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+.room-type {
+    margin: 1rem 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-family: Rubik, sans-serif;
+}
+.room-img {
+    max-width: 400px;
+    width: 90%;
+}
+@media screen and (max-width: 650px) {
+    .room-type {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .room-img {
+        max-width: 300px;
     }
 }

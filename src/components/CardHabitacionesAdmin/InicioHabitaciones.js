@@ -46,11 +46,11 @@ function InicioHabitaciones() {
 
                         <div className="search-group">
                             <div className="search-opt">
-                                <button onClick={handleSortAsc}>Precio de menor a mayor</button>
+                                <button className='button-sort' onClick={handleSortAsc}>Precio de menor a mayor</button>
 
                             </div>
                             <div className="search-opt">
-                                <button onClick={handleSortDsc}>Precio de mayor a menor</button>
+                                <button className='button-sort' onClick={handleSortDsc}>Precio de mayor a menor</button>
 
                             </div>
                             <div className="search-opt">
@@ -67,7 +67,7 @@ function InicioHabitaciones() {
                             </div>
                         </div>
                         <div className="search-group">
-                            <button className='button-options' >Buscar</button>
+                            <button className='button-options'>Buscar</button>
                         </div>
                     </div>
                 </div>
@@ -107,7 +107,9 @@ function InicioHabitaciones() {
                                 </div>
                                 <div className='roomcard-button'>
                                     <button className='botonReservar'>Reservar</button>
-                                    <button className='botonEditar'>Ver más</button>
+                                    <button className='botonEditar'>
+                            Ver más
+                        </button>
                                 </div>
                             </div>
                         </div>

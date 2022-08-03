@@ -48,23 +48,39 @@
     width: 100px;
 }
 .button-options {
+    background-color: #ffffff;
+    color: #0f6875;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: 1px #FF820D solid;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.button-options:hover{
+    background-color: #333333;
+    color: #ffffff ;
+}
+.button-sort {
     background-color: #333333;
     color: #FFFCF6;
     font-family: 'Rubik', sans-serif;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 1rem;
     border-radius: 5px;
     border: 1px #0f6875 solid;
     margin: 0 auto;
     cursor: pointer;
 }
 
-.button-options:hover{
+.button-sort:hover{
     background-color: #FFFCF6;
     color: #0f6875 ;
 }
-
 .room-container {
     display: flex;
     gap: 1rem;

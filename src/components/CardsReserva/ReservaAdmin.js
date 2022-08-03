@@ -2,7 +2,7 @@ import React , { useState}from 'react';
 import './reserva.css';
 import {faAngleDown} from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import habitacion1 from '../../assets/grid/room1.png';
+import habitacion1 from '../../assets/img/room1.png';
 import Boton from '../Botones/Botones';
 
 // export const Complement = (iduser) => {

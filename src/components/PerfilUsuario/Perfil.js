@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './Perfil.css';
 import Imageperfil from '../../components/PerfilUsuario/Fotoperfil';
-import Foto from '../../img/christina-wocintechchat-com-lFntEHwQvi4-unsplash.jpg';
+import Foto from '../../assets/img/christina-wocintechchat-com-lFntEHwQvi4-unsplash.jpg';
 import Boton from '../Botones/Botones';
 import {faPenToSquare} from '@fortawesome/free-solid-svg-icons'; 
 import Modal from '../Modal/Modal';

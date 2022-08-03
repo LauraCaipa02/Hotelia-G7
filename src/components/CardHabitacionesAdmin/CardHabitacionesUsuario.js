@@ -1,6 +1,6 @@
 import React from 'react';
 import './CardHabitacionesAdmin.css';
-import habitacion1 from '../../img/WhatsApp Image 2022-07-08 at 7.00.58 PM.jpeg';
+import habitacion1 from '../../assets/grid/room1.png';
 
 function CardHabitacionesUsuario() {
     return (

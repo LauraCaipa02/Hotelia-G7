@@ -1,9 +1,9 @@
 import React from 'react';
 import './FormularioRegistro.css';
 import HeaderFormRegis from '../../elementos/HeaderFormRegis/HeaderFormRegis';
-import hab1 from '../../img/hab1.png'
-import bed1 from '../../img/bed1.png';
-import plushab from '../../img/plushab.png';
+import hab1 from '../../assets/img/hab1.png'
+import bed1 from '../../assets/img/bed1.png';
+import plushab from '../../assets/img/plushab.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo, faBook, faCirclePlus, faCamera } from '@fortawesome/free-solid-svg-icons';
 

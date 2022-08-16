@@ -68,7 +68,7 @@ function Navdash() {
             </ul>
 
             <div className='icon_close_hover'>
-            <a href='habitaciones' className='container_btn_nav_hover'>
+            <a href='/login' className='container_btn_nav_hover'>
                 <FontAwesomeIcon icon={faArrowRightFromBracket} className="icon_navdash_hover"/>
                 <p>Cerrar Sesión</p>
             </a>

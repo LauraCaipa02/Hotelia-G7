@@ -1,6 +1,3 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import {useState,useEffect } from 'react';
 import Info from '../../components/PerfilUsuario/Perfil';
 import Title from '../../components/Titles/Titles';
 import Navdash from '../../components/navbar/Navbardash';

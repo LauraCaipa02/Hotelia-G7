@@ -31,7 +31,7 @@ function Navdashadmin() {
                 </li>
 
                 <li>
-                    <a href='/perfil'className='container_btn_nav'>
+                    <a href='/admin/perfil'className='container_btn_nav'>
                         <FontAwesomeIcon icon={faUserAstronaut} className="icon_navdash" />
                     </a>
                 </li>
@@ -57,21 +57,21 @@ function Navdashadmin() {
                 </li>
 
                 <li>
-                    <a href='habitaciones' className='container_btn_nav_hover'>
+                    <a href='/admin/habitaciones' className='container_btn_nav_hover'>
                         <FontAwesomeIcon icon={faBed} className="icon_navdash_hover"/>
                         <p>Habitaciones</p>
                     </a>
                 </li>
 
                 <li>
-                    <a href='/admin/registro-habitacion'className='container_btn_nav_hover'>
+                    <a href='/admin/registrohabitaciones'className='container_btn_nav_hover'>
                         <FontAwesomeIcon icon={faFolderPlus} className="icon_navdash_hover" />
                         <p>Registrar Habitación</p>
                     </a>
                 </li>
 
                 <li>
-                    <a href='/perfil'className='container_btn_nav_hover'>
+                    <a href='/admin/perfil'className='container_btn_nav_hover'>
                         <FontAwesomeIcon icon={faUserAstronaut} className="icon_navdash_hover" />
                         <p>Perfil</p>
                     </a>
@@ -79,7 +79,7 @@ function Navdashadmin() {
             </ul>
 
             <div className='icon_close_hover'>
-            <a href='habitaciones' className='container_btn_nav_hover'>
+            <a href='/login' className='container_btn_nav_hover'>
                 <FontAwesomeIcon icon={faArrowRightFromBracket} className="icon_navdash_hover"/>
                 <p>Cerrar Sesión</p>
             </a>

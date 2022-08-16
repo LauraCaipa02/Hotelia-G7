@@ -10,6 +10,7 @@
     grid-template-rows: repeat(4, auto);
     column-gap: 1rem;
     margin: 1rem auto;
+    
     padding: 1rem;
     background-color: #FFFCF6;
     justify-content: center;
@@ -37,6 +38,10 @@
     grid-column: 1/-1;
     grid-row: 2/3;
     margin: 0.3rem auto; 
+}
+
+.ImgCardHabitacionesAdmin img{
+   max-width: 300px;
 }
 
 .DescripcionContenidoCardHabitacionesAdmin h4, .EspecificacionesContenidoCardHabitacionesAdmin h4, .PrecioContenidoCardHabitacionesAdmin h4, .EstadoContenidoCardHabitacionesAdmin h4{
@@ -97,7 +102,24 @@
     background-color: #FFFCF6;
     color: #0f6875 ;
 }
-    
+.botonEstado{
+    width: 100%;
+    background-color: #337AB7;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px #337AB7 solid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+.botonEstado:hover{
+    background-color: #FFFCF6;
+    color: #337AB7 ;
+}
 
 @media (min-width: 1024px){
 .PrincipalCardHabitacionesAdmin{
@@ -105,24 +127,38 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(2, auto);
     column-gap: 1rem;
-    margin: 1rem auto;
+    margin: 0px auto;
+    margin-bottom: 2rem;
     padding: 1rem;
-    width: 70%;
+    width: 65%;
 }
 .NombreContenidoCardHabitacionesAdmin{
-    grid-column: 2/10;
+    grid-column: 2/8;
     grid-row: 1/2; 
     text-align: left;
     margin-left: 0px;
+    
 }
-.NombreContenidoCardHabitacionesAdmin h3{
+.NombreContenidoCardHabitacionesAdmin h3,.PrecioContenidoCardHabitacionesAdmin h3{
     text-align: left;
     font-size: 1.5rem;
     font-weight: 500;
     padding-bottom: 0rem;
     margin: 0rem;
 }
-
+.PrecioContenidoCardHabitacionesAdmin h3{
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-bottom: 0rem;
+    margin: 0rem;
+}
+.PrecioContenidoCardHabitacionesAdmin{
+    grid-column: 8/12;
+    grid-row: 1/2; 
+    text-align: left;
+    margin-left: 0px;
+}
 .ImgCardHabitacionesAdmin{
     grid-column: 1/2;
     grid-row: 1/-1; 
@@ -149,7 +185,7 @@
 }
 
 .BotonesCardHabitacionesAdmin{
-    grid-column: 11/13;
+    grid-column: 10/12;
     grid-row: 1/-1; 
 }
 
@@ -159,7 +195,7 @@
     background-color: #FF820D;
     color: #FFFCF6;
     font-family: 'Rubik', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     padding: 0.5rem;
     border-radius: 5px;
@@ -178,7 +214,7 @@
     background-color: #157A8A;
     color: #FFFCF6;
     font-family: 'Rubik', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     padding: 0.5rem;
     border-radius: 5px;
@@ -191,6 +227,25 @@
 .botonEditar:hover{
     background-color: #FFFCF6;
     color: #0f6875 ;
+}
+
+.botonEstado{
+    width: 100%;
+    background-color: #337AB7;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px #337AB7 solid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+.botonEstado:hover{
+    background-color: #FFFCF6;
+    color: #337AB7 ;
 }
 
 }

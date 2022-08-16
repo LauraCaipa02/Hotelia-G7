@@ -53,7 +53,7 @@ function SearchBar () {
                         </div>
                         <div>
                             <div className="search-content">                            
-                                <div className="search-item">
+                                {/* <div className="search-item">
                                     <FontAwesomeIcon icon={faCalendar} />
                                     <span onClick={() => setOpenDate(!openDate)}>{`${format(date[0].startDate, "MM/dd/yyyy")} a ${format(date[0].endDate, "MM/dd/yyyy")}`}</span>
 
@@ -65,7 +65,7 @@ function SearchBar () {
                                         minDate={new Date()}
                                     />)
                                     }
-                                </div>
+                                </div> */}
 
                                 <div className="search-item">
                                     <FontAwesomeIcon icon={faPerson} />

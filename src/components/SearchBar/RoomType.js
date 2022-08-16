@@ -1,5 +1,5 @@
 import React from "react";
-import RoomHome from '../../assets/grid/room1.png'
+import RoomHome from '../../assets/img/room1.png'
 import './searchroom.css';
 
 function RoomType(){

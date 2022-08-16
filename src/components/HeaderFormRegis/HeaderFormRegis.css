@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *{
@@ -70,4 +71,78 @@
     }
 
 
+=======
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+.PrincipalHeaderFormRegis{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(2, auto);
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+.TitleHeaderFormRegis{
+    grid-column: 1/-1;
+    grid-row: 2/3; 
+}
+
+.TitleHeaderFormRegis h1{
+    color: #157A8A;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+}
+
+.LogoHeaderFormRegis{
+    grid-column: 1/-1;
+    grid-row: 1/2; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+
+    .PrincipalHeaderFormRegis{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(1, auto);
+        gap: 1.5rem;    
+        padding-top: 1rem;
+        padding-bottom: 0.3rem;
+        width: 70%;
+        margin: 0px auto;
+
+    }
+    .TitleHeaderFormRegis{
+        grid-column: 1/9;
+        grid-row: 1/-1; 
+        text-align: left;
+        display: flex;
+        justify-content: left;
+        align-items: center;
+    }
+
+    .TitleHeaderFormRegis h1{
+        font-weight: bold;
+        font-size: 2.0rem;
+        text-align: left;
+    }
+    
+    .LogoHeaderFormRegis{
+        grid-column: 12/13;
+        grid-row: 1/-1; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+>>>>>>> 1731a9526bac1f49b6866b8ca29580d252347250
 }

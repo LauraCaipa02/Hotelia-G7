@@ -18,14 +18,11 @@ import EstadoHab from './pages/reservasAdmin/reservasAdmin';
 import ActuzalizarHab from'./pages/ActuzalizarHab/ActualizarHab';
 import RoomSearch from './pages/roomsearch/RoomSearch';
 
-
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path='/' element={<Home />}></Route>
-
+    <Route path='/' element={<Home />}></Route>
       <Route path='/login' element={<Login />} />
       <Route path='/perfil' element={<PerfilUsuario />}></Route>
       <Route path='/perfile' element={<PerfilUsuarioe />}></Route>
@@ -37,7 +34,7 @@ root.render(
       <Route path='/admin/registrohabitaciones' element={<RegistroHab/>}></Route>
       <Route path='/admin/estadohabitaciones' element={<EstadoHab/>}></Route>
       <Route path='/admin/actualizarhabitaciones' element={<ActuzalizarHab/>}></Route>
-      <Route path='/registro' element={<RegistroUsuario />}></Route>
+      <Route path='/registro' element={<RegistroUsuario />}></Route> 
       <Route path='/busqueda' element={<RoomSearch />}></Route>
 
     </Routes>

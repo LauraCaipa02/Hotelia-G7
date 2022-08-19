@@ -2,19 +2,7 @@ import React , { useState}from 'react';
 import './reserva.css';
 import {faAngleDown} from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import habitacion1 from '../../assets/img/room1.png';
 import Boton from '../Botones/Botones';
-
-// export const Complement = (iduser) => {
-//     iduser={iduser}
-//     console.log(iduser)
-// }
-
-
-// function InfoID({iduser}){
-//     Complement={iduser};
-//     console.log(Complement)
-// }
 
 function CardAdmin({booking}){
     const [show, setShow] = useState(true);
@@ -25,13 +13,6 @@ function CardAdmin({booking}){
     const room=booking["habitaciones"];
     const dataRoom=room[0];
     console.log(dataRoom.nombrehab)
-
-    // const handleLink=()=>{
-    //     const idUser=dataUser._id;
-    //     console.log(idUser);
-    //     <Complement iduser={dataUser._id}/>;
-    //     window.location.href='/admin/perfil';
-    // }
 
     return (
     <main className='maininfor'>

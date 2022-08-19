@@ -1,10 +1,8 @@
-import React , { useState,useEffect }from 'react';
-import axios from "axios";
+import React , { useState}from 'react';
 import './reserva.css';
-import {faAngleUp,faAngleDown} from '@fortawesome/free-solid-svg-icons'; 
+import {faAngleDown} from '@fortawesome/free-solid-svg-icons'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Boton from '../Botones/Botones';
-import Swal from 'sweetalert2';
 
 const Card = ({booking}) => {
     const [show, setShow] = useState(true);
@@ -15,6 +13,7 @@ const Card = ({booking}) => {
     const room=booking["habitaciones"];
     const dataRoom=room[0];
     console.log(dataRoom.nombrehab)
+
 
     return (
         <main className='maininfor'>
@@ -121,7 +120,13 @@ const Card = ({booking}) => {
             </div>
         </div> */}
         </div>
-
+        <div className='Container_three_2'>
+            <img src={`https://hoteliakuepag7.herokuapp.com/${dataRoom.img}`} alt='' className='imgCard_2' />
+            <div className='Container_three_21'>
+            <div className='label'>{dataRoom.nombrehab.toUpperCase()}</div>
+            <div className='text_r text_ct_2'>{dataRoom.descripcion}</div>
+            </div>
+        </div>
         <div className='Container_four'>
             <div className='container_fc_2' >
             <div className='label text_cfp fl'>PRECIO TOTAL</div>

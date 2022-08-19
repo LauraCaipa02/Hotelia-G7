@@ -1,0 +1,67 @@
+.botonCancelM{
+    width: 30%;
+    background-color: #157A8A;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.2rem;
+    border-radius: 5px;
+    border: 1px #11626e solid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+.botonCancelM:hover{
+    background-color:#FFFCF6 ;
+    color:  #157A8A;
+}
+
+
+.botonSaveM{
+    width: 30%;
+    background-color: #FF820D;
+    color: #FFFCF6;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.3rem;
+    border-radius: 5px;
+    border: 1px #cf6909 solid;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}    
+
+.botonSaveM:hover{
+    background-color:#FFFCF6;
+    color: #FF820D;
+}
+
+.modalFooter{
+    display: flex;
+    flex-direction: row;
+    background-color: #FFFCF6;
+    text-decoration: none;
+}
+
+.Modal{
+    background-color: #FFFCF6;
+    text-decoration: none;
+
+}
+
+.form-control{
+    background: #FFFFFF;
+    border: 1px solid #3a3a3a60;
+    height: 34px;
+    width: 200px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    font-family: var(--LibreFranklin-font);
+    font-size: 18px;
+    line-height: 20px;
+    color: rgba(25, 25, 25, 0.9);
+    padding: 0 5px;
+    margin: 5px 0;
+}

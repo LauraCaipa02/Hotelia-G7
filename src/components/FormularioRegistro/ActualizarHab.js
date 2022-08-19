@@ -63,7 +63,7 @@ function ActuzalizarHab() {
             title: 'Cancelado',
    
           })
-        navigateOne("/habitaciones");
+        navigateOne("/admin/habitaciones");
     }
 
     return (

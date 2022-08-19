@@ -103,13 +103,12 @@ function LoginUser() {
                 onSubmit={(values, { setSubmitting }) => {
                     
                     setTimeout(() => {
-                        
                         console.log(JSON.stringify(values, null, 2));
                         setSubmitting(false);
                     }, 1000);
-                    if (values.email === 'marioyepes@hotmail.com' && values.password ==='Administrador'){
+                    if (values.email === 'marioyepes@gmail.com' && values.password ==='Administrador'){
                     navigate('/admin/habitaciones');}
-                    else if (values.email === 'benitomz@gmail.com' && values.password ==='iukjmnkj'){
+                    else if (values.email === 'benitomz@gmail.com' && values.password ==='Usuario'){
                     navigate('/habitaciones');
                     }else{
                         alert('Usuario o contraseña incorrecto')

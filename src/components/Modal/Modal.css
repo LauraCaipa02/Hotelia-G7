@@ -41,6 +41,11 @@
     align-items: center;
 }
 
+.inputfont{
+    font-size: 12px !important; 
+    line-height: 20px;
+}
+
 @media screen and (min-width: 768px) {
 
 }
@@ -60,7 +65,24 @@
     }
     .containerc_li{
     display: flex;
-}
+    }
+
+    .Container_info__hab{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .inputfont{
+        font-size: 20px !important;
+        height: 21px !important;
+    }
+
+    .con_fec{
+        margin:  auto 100px;
+    }
+
+
+
 
 }
 

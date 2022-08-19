@@ -53,6 +53,7 @@ function Infoe() {
                 'success'
             )
             handleClose();
+            window.location.href='/perfile';
             setUplist(!upList);
         }else{
             Swal.fire(
@@ -74,19 +75,19 @@ function Infoe() {
                     'success'
                 )
                 handleClose();
-                window.location.href='/habitaciones';
+                window.location.href='/login';
                 setUplist(!upList);
             } else{
                 Swal.fire(
                     '¡Error!',
-                    'Hubo un problema,',
+                    'La contraseña nueva y la confirmación no coinciden',
                     'error'
                 )
             }
         }else{
             Swal.fire(
             '¡Error!',
-            'Hubo un problema',
+            'La contraseña Actual no es correcta',
             'error'
             )
         }
@@ -194,11 +195,12 @@ function Infoe() {
                     <input
                     id="email"
                     name="email"
-                    type="text" 
+                    type="email" 
                     placeholder={list.email}
                     value={dataModal.email}
                     onChange={handleChangeModal}
                     className="input_modal input_modals"
+                    required
                     />
                 </div>
 
@@ -212,6 +214,7 @@ function Infoe() {
                     value={dataModal.telefono}
                     onChange={handleChangeModal}
                     className="input_modal input_modals"
+                    required
                     />
                 </div>
             </Modal>
@@ -234,6 +237,7 @@ function Infoe() {
                     //value={list.password}
                     onChange={handleChangeModal}
                     className="input_modal input_modals"
+                    required
                     />
                 </div>
 
@@ -247,6 +251,7 @@ function Infoe() {
                     value={dataModal.password}
                     onChange={handleChangeModal}
                     className="input_modal input_modals"
+                    required
                     />
                 </div>
 
@@ -260,6 +265,7 @@ function Infoe() {
                     //value={list.password}
                     onChange={handleChangeModal}
                     className="input_modal input_modals"
+                    required
                     />
                 </div>
             </Modal>

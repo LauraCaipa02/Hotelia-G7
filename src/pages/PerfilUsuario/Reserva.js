@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 import axios from "axios";
 
 function ReservaUsuario(){
-    const url = "https://hoteliakuepa.herokuapp.com/reservas";
+    const url = "https://hoteliakuepag7.herokuapp.com/reservas";
     
     const getData = async () => {
         const response = axios.get(url);

@@ -1,11 +1,11 @@
 import React from 'react';
 import './FooterDerlHeader.css';
-import LogoSolo from '../../img/LogoSolo.png';
-import redes from '../../img/redes.png';
-import booking from '../../img/booking.png';
-import airbnb from '../../img/airbnb.png';
-import trivago from '../../img/trivago.png';
-import paginashotel from '../../img/paginashotel.png';
+import LogoSolo from '../../assets/img/LogoSolo.png';
+import redes from '../../assets/img/redes.png';
+import booking from '../../assets/img/booking.png';
+import airbnb from '../../assets/img/airbnb.png';
+import trivago from '../../assets/img/trivago.png';
+import paginashotel from '../../assets/img/paginashotel.png';
 
 
 
